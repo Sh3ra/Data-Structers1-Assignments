@@ -2,14 +2,28 @@
  * MySpecialArray
  */
 import java.util.*;
+import java.util.Scanner; 
 public class MySpecialArray {
 
-    public static void reverse(Integer[] arr) {
-        Collections.reverse(Arrays.asList(arr));        
+    public static void reverse(int[] arr) {
+        int temp;
+        for(int i=0;i<arr.length/2;i++)
+        {
+            temp=arr[i];
+            arr[i]=arr[arr.length-1-i];
+            arr[arr.length-1-i]=temp;
+        }        
     }
 
     public static void main(String[] args) {
-        Integer [] arr={1,2,3,4,5};
+        Scanner sc = new Scanner(System.in);
+        int n;
+        n=sc.nextInt();
+        int [] arr=new int[n];
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
         reverse(arr);
         for(int i=0;i<5;i++)
         {
