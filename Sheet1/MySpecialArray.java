@@ -1,6 +1,7 @@
 /**
  * MySpecialArray
  */
+import java.util.Arrays;
 import java.util.Scanner; 
 public class MySpecialArray {
 
@@ -56,10 +57,7 @@ public class MySpecialArray {
         }
         sc.close();
         reverse(arr);
-        for(int i=0;i<arr.length;i++)
-        {
-            System.out.println(arr[i]);
-        }
+        System.out.println("Reversed array:"+Arrays.toString(arr));
         int [] sumEvenOddarr=new int [2];
         sumEvenOddarr=sumEvenOdd(arr);
         System.out.println(sumEvenOddarr[0]);
