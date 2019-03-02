@@ -45,25 +45,61 @@ public class MySpecialArray {
         }
         return 0;
     }
+    public static void moveValue(int[] arr, int val) 
+    {
+        for(int i=0;i<arr.length;i++)
+        {  
+            boolean check=false;
+            if(i!=0&&arr[i-1]==val)
+        {
+            for(int j=arr.length-1;j>i;j--)
+            {
+                if(arr[j]!=val)
+                {
+                    check=true;
+                    break;
+                }
+            }
+            if(check)i--;
+        }
+
+         if(arr[i]==val)
+         {
+             for (int j=i;j<arr.length-1;j++) 
+             {
+                int temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+             }
+         }
+     }   
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n;
+        System.out.println("Enter array size: ");
         n=sc.nextInt();
         int [] arr=new int[n];
-        
+        System.out.println("Enter array elements: ");
         for(int i=0;i<arr.length;i++)
         {
             arr[i]=sc.nextInt();
         }
+        System.out.println("Enter the value to be moved at the end:");
+        int val=sc.nextInt();
         sc.close();
         reverse(arr);
         System.out.println("Reversed array: "+Arrays.toString(arr));
+        reverse(arr);
         int [] sumEvenOddarr=new int [2];
         sumEvenOddarr=sumEvenOdd(arr);
         System.out.println("Sum of Even: "+sumEvenOddarr[0]);
         System.out.println("Sum of Odd: "+sumEvenOddarr[1]);
         double avg;
         avg=average(arr);
-        System.out.print("Average: "+avg);
+        System.out.println("Average: "+avg);
+        moveValue(arr,val);
+        System.out.println("Array after moving value: "+Arrays.toString(arr));
+
     }
 }
