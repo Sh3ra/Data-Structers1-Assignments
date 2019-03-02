@@ -57,13 +57,13 @@ public class MySpecialArray {
         }
         sc.close();
         reverse(arr);
-        System.out.println("Reversed array:"+Arrays.toString(arr));
+        System.out.println("Reversed array: "+Arrays.toString(arr));
         int [] sumEvenOddarr=new int [2];
         sumEvenOddarr=sumEvenOdd(arr);
-        System.out.println(sumEvenOddarr[0]);
-        System.out.println(sumEvenOddarr[1]);
+        System.out.println("Sum of Even: "+sumEvenOddarr[0]);
+        System.out.println("Sum of Odd: "+sumEvenOddarr[1]);
         double avg;
         avg=average(arr);
-        System.out.print(avg);
+        System.out.print("Average: "+avg);
     }
 }
