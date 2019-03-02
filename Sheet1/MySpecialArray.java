@@ -1,11 +1,11 @@
 /**
  * MySpecialArray
  */
-import java.util.*;
 import java.util.Scanner; 
 public class MySpecialArray {
 
-    public static void reverse(int[] arr) {
+    public static void reverse(int[] arr) 
+    {
         int temp;
         for(int i=0;i<arr.length/2;i++)
         {
@@ -15,12 +15,12 @@ public class MySpecialArray {
         }        
     }
     public static int[] sumEvenOdd(int[] arr)
-    {int [] a=new int[2];
+    {
+        int [] a=new int[2];
        a[0]=0;
        a[1]=0;     
-        if(arr==null)
+        if(arr.length==0)
         return a;
-
         else 
         {
             for(int i=0;i<arr.length;i++)
@@ -30,9 +30,20 @@ public class MySpecialArray {
             }
             return a;
         }
-
     } 
-
+    public static double average(int[] arr) 
+    {        
+        if(arr.length!=0)
+        {
+            double avg=0;
+            for(int i=0;i<arr.length;i++)
+            {
+                avg+=arr[i]/(arr.length*1.0);
+            }
+            return avg;
+        }
+        return 0;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n;
@@ -43,8 +54,9 @@ public class MySpecialArray {
         {
             arr[i]=sc.nextInt();
         }
+        sc.close();
         reverse(arr);
-        for(int i=0;i<5;i++)
+        for(int i=0;i<arr.length;i++)
         {
             System.out.println(arr[i]);
         }
@@ -52,6 +64,8 @@ public class MySpecialArray {
         sumEvenOddarr=sumEvenOdd(arr);
         System.out.println(sumEvenOddarr[0]);
         System.out.println(sumEvenOddarr[1]);
-
+        double avg;
+        avg=average(arr);
+        System.out.print(avg);
     }
 }
