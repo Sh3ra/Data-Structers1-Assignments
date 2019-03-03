@@ -74,6 +74,38 @@ public class MySpecialArray {
          }
      }   
     }
+    public static void transpose(int[][] arr)
+    {
+        if(arr.length==0)return;
+        if(arr.length==arr[0].length){
+        int temp;
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=0;j<arr[i].length/2;j++)
+            {
+                temp=arr[i][j];
+                arr[i][j]=arr[j][i];
+                arr[j][i]=temp;
+            }
+        }
+        System.out.println("Transposed array:");
+        System.out.println(Arrays.deepToString(arr));
+
+     }
+     else {
+         int [][] arr1=new int[arr[0].length][arr.length];
+         for(int i=0;i<arr.length;i++)
+         {
+             for(int j=0;j<arr[i].length;j++)
+             {
+                 arr1[j][i]=arr[i][j];
+             }
+         }
+         System.out.println("Transposed array:");
+         System.out.println(Arrays.deepToString(arr1));
+     }
+
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n;
@@ -87,7 +119,6 @@ public class MySpecialArray {
         }
         System.out.println("Enter the value to be moved at the end:");
         int val=sc.nextInt();
-        sc.close();
         reverse(arr);
         System.out.println("Reversed array: "+Arrays.toString(arr));
         reverse(arr);
@@ -100,6 +131,22 @@ public class MySpecialArray {
         System.out.println("Average: "+avg);
         moveValue(arr,val);
         System.out.println("Array after moving value: "+Arrays.toString(arr));
+        int m;
+        System.out.println("Enter size of 2-d aray: ");
+        n=sc.nextInt();
+        m=sc.nextInt();
+        int [][] a=new int[n][m];
+        System.out.println("Enter array elements: ");
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=0;j<a[i].length;j++)
+            {
+                a[i][j]=sc.nextInt();
+            }
+        }
+        sc.close();
+        transpose(a);
+
 
     }
 }
