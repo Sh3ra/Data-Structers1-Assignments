@@ -1,8 +1,6 @@
 /**
  * MySpecialArray
  */
-import java.util.Arrays;
-import java.util.Scanner; 
 public class MySpecialArray {
 
     public static void reverse(int[] arr) 
@@ -88,65 +86,10 @@ public class MySpecialArray {
                 arr[j][i]=temp;
             }
         }
-        System.out.println("Transposed array:");
-        System.out.println(Arrays.deepToString(arr));
 
      }
-     else {
-         int [][] arr1=new int[arr[0].length][arr.length];
-         for(int i=0;i<arr.length;i++)
-         {
-             for(int j=0;j<arr[i].length;j++)
-             {
-                 arr1[j][i]=arr[i][j];
-             }
-         }
-         System.out.println("Transposed array:");
-         System.out.println(Arrays.deepToString(arr1));
-     }
-
+     else return;
+     
     }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n;
-        System.out.println("Enter array size: ");
-        n=sc.nextInt();
-        int [] arr=new int[n];
-        System.out.println("Enter array elements: ");
-        for(int i=0;i<arr.length;i++)
-        {
-            arr[i]=sc.nextInt();
-        }
-        System.out.println("Enter the value to be moved at the end:");
-        int val=sc.nextInt();
-        reverse(arr);
-        System.out.println("Reversed array: "+Arrays.toString(arr));
-        reverse(arr);
-        int [] sumEvenOddarr=new int [2];
-        sumEvenOddarr=sumEvenOdd(arr);
-        System.out.println("Sum of Even: "+sumEvenOddarr[0]);
-        System.out.println("Sum of Odd: "+sumEvenOddarr[1]);
-        double avg;
-        avg=average(arr);
-        System.out.println("Average: "+avg);
-        moveValue(arr,val);
-        System.out.println("Array after moving value: "+Arrays.toString(arr));
-        int m;
-        System.out.println("Enter size of 2-d aray: ");
-        n=sc.nextInt();
-        m=sc.nextInt();
-        int [][] a=new int[n][m];
-        System.out.println("Enter array elements: ");
-        for(int i=0;i<a.length;i++)
-        {
-            for(int j=0;j<a[i].length;j++)
-            {
-                a[i][j]=sc.nextInt();
-            }
-        }
-        sc.close();
-        transpose(a);
-
-
-    }
+    
 }
