@@ -2,8 +2,8 @@
  * LinkedListNode
  */
 public class LinkedListNode {
-    int value;
-    node next;
+     int value;
+     LinkedListNode next;
     public int getValue()
     {
         return value;
@@ -12,5 +12,5 @@ public class LinkedListNode {
     {
         return next;
     }
-    
+      
 }
