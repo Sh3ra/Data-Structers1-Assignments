@@ -44,8 +44,33 @@ public class MySpecialLinkedListUtils {
 
     public static LinkedListNode reverse(LinkedListNode head)
     {
-        
+        LinkedListNode point=new LinkedListNode();
+        LinkedListNode temp=new LinkedListNode();
+        point=head;
+        int size=0;
+        LinkedListNode new_head=new LinkedListNode();
+        while(point.getNext()!=null)
+        {
+            point=point.getNext();
+            size++;
+        }
+        new_head=point;
+       int temp_size=size;
+       for(int i=0;i<=size;i++)
+       {
+           temp=head;
+           for(int j=0;j<temp_size;j++)
+           {
+               temp=temp.getNext();
+            }
+           temp_size--;
+           point.next=temp;
+           point=point.getNext();
+       }
+       point.next=null;
+        return new_head;
     }
+
     public static void main(String[] args) {
         LinkedListNode head= new LinkedListNode();
         LinkedListNode one= new LinkedListNode();
@@ -65,10 +90,17 @@ public class MySpecialLinkedListUtils {
         four.next=five;
         five.value=0;
         five.next=null;
-        double [] arr=new double[5];
+        /*double [] arr=new double[5];
         arr=summary(head);
         for(int i=0;i<5;i++)
-        System.out.println(arr[i]);       
+        System.out.println(arr[i]);       */
+       /*head=reverse(head);
+        while(head.getNext()!=null)
+       {
+           System.out.println(head.getValue());
+           head=head.next;
+       }
+       System.out.println(head.getValue());*/
     }  
 
     }
