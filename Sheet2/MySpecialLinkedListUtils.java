@@ -71,6 +71,31 @@ public class MySpecialLinkedListUtils {
         return new_head;
     }
 
+    public static LinkedListNode evenIndexedElements (LinkedListNode head) 
+    {
+        LinkedListNode new_head = new LinkedListNode();
+        LinkedListNode point = new LinkedListNode();
+        int counter=0;
+        new_head.value=head.getValue();
+        point=new_head;
+        while(head.getNext()!=null)
+        {
+            if(counter%2==0)
+            {
+                new_head.value=head.getValue();
+
+            }
+            else{
+                new_head.next=head.getNext();
+                new_head=new_head.getNext();
+            }
+            head=head.getNext();
+            counter++;
+        }
+        new_head.next=null;
+        return point;
+    }
+
     public static void main(String[] args) {
         LinkedListNode head= new LinkedListNode();
         LinkedListNode one= new LinkedListNode();
@@ -96,6 +121,14 @@ public class MySpecialLinkedListUtils {
         System.out.println(arr[i]);       */
        /*head=reverse(head);
         while(head.getNext()!=null)
+       {
+           System.out.println(head.getValue());
+           head=head.next;
+       }
+       System.out.println(head.getValue());*/
+
+       /*head=evenIndexedElements(head);
+       while(head.getNext()!=null)
        {
            System.out.println(head.getValue());
            head=head.next;
