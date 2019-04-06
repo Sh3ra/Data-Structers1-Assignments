@@ -145,6 +145,29 @@ public class MySpecialLinkedListUtils {
         return head;
     }
 
+    public static boolean palindrome(LinkedListNode head) {
+        LinkedListNode head2 = new LinkedListNode();
+        LinkedListNode temp = new LinkedListNode();
+        int size = 0;
+        temp = head;
+        while (temp.getNext() != null) {
+            temp = temp.getNext();
+            size++;
+        }
+        head2 = head;
+        temp = head;
+        for (int i = 0; i <= size / 2; i++) {
+            head2 = head;
+            for (int j = 0; j < size - i; j++) {
+                head2 = head2.getNext();
+            }
+            if (temp.getValue() != head2.getValue())
+                return false;
+            temp = temp.getNext();
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         LinkedListNode head = new LinkedListNode();
         LinkedListNode one = new LinkedListNode();
@@ -162,7 +185,7 @@ public class MySpecialLinkedListUtils {
         three.next = four;
         four.value = 1;
         four.next = five;
-        five.value = 0;
+        five.value = 4;
         five.next = null;
         /*
          * double [] arr=new double[5]; arr=summary(head); for(int i=0;i<5;i++)
@@ -190,6 +213,7 @@ public class MySpecialLinkedListUtils {
          * {System.out.println(head.getValue()); head = head.next; }
          * System.out.println(head.getValue());
          */
+        // System.out.println(palindrome(head));
 
     }
 
