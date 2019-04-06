@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 /**
  * MySpecialLinkedListUtils
  */
@@ -116,10 +118,61 @@ public class MySpecialLinkedListUtils {
         }
         return head;
     }
+   
+    public static LinkedListNode sortedMerge(LinkedListNode a,LinkedListNode b) 
+    {
+        LinkedListNode result =new LinkedListNode(); 
+        result=null;
+        if (a == null) 
+            return b; 
+        if (b == null) 
+            return a;  
+        if (a.getValue() <= b.getValue())  
+        { 
+            result = a; 
+            result.next = sortedMerge(a.next, b); 
+        }  
+        else 
+        { 
+            result = b; 
+            result.next = sortedMerge(a, b.next); 
+        } 
+        return result;
+    }
 
     public static LinkedListNode mergeSort(LinkedListNode head) {
-
-        return head;
+        if(head.getNext()==null)return head;
+        
+        LinkedListNode temp=new LinkedListNode();
+        int size = 0;
+        temp=head;
+        while (temp.getNext() != null) {
+            temp = temp.getNext();
+            size++;
+        }
+        LinkedListNode front=new LinkedListNode();
+        LinkedListNode back=new LinkedListNode();
+        front=head.getNext();
+        back=head;
+        while(front.getNext()!=null) {
+            front=front.getNext();
+            if(front.getNext()!=null)
+            {
+                front=front.getNext();
+                back=back.getNext();
+            }
+            
+        }
+        if (size%2==0)back=back.getNext();
+        front=back.getNext();
+        back.next=null;
+        LinkedListNode left=new LinkedListNode();
+        LinkedListNode right=new LinkedListNode();
+        left=mergeSort(head);
+        right=mergeSort(front);
+        LinkedListNode sorted_list=new LinkedListNode();
+        sorted_list=sortedMerge(left, right);
+        return sorted_list;
     }
 
     public static LinkedListNode removeCentralNode(LinkedListNode head) {
@@ -167,54 +220,5 @@ public class MySpecialLinkedListUtils {
         }
         return true;
     }
-
-    public static void main(String[] args) {
-        LinkedListNode head = new LinkedListNode();
-        LinkedListNode one = new LinkedListNode();
-        LinkedListNode two = new LinkedListNode();
-        LinkedListNode three = new LinkedListNode();
-        LinkedListNode four = new LinkedListNode();
-        LinkedListNode five = new LinkedListNode();
-        head.value = 4;
-        head.next = one;
-        one.value = 1;
-        one.next = two;
-        two.value = 8;
-        two.next = three;
-        three.value = 1;
-        three.next = four;
-        four.value = 1;
-        four.next = five;
-        five.value = 4;
-        five.next = null;
-        /*
-         * double [] arr=new double[5]; arr=summary(head); for(int i=0;i<5;i++)
-         * System.out.println(arr[i]);
-         */
-        /*
-         * head=reverse(head); while(head.getNext()!=null) {
-         * System.out.println(head.getValue()); head=head.next; }
-         * System.out.println(head.getValue());
-         */
-
-        /*
-         * head=evenIndexedElements(head); while(head.getNext()!=null) {
-         * System.out.println(head.getValue()); head=head.next; }
-         * System.out.println(head.getValue());
-         */
-
-        /*
-         * head = insertionSort(head); while (head.getNext() != null)
-         * {System.out.println(head.getValue()); head = head.next; }
-         * System.out.println(head.getValue());
-         */
-        /*
-         * head= removeCentralNode(head); while (head.getNext() != null)
-         * {System.out.println(head.getValue()); head = head.next; }
-         * System.out.println(head.getValue());
-         */
-        // System.out.println(palindrome(head));
-
-    }
-
+    
 }
