@@ -3,7 +3,8 @@ package eg.edu.alexu.csd.datastructure.iceHockey.cs;
 public interface IPlayersFinder {
     /**
      * Search for players locations at the given photo
-     * @param photo * Two dimension array of photo contents
+     * @param photo
+     * Two dimension array of photo contents
      * Will contain between 1 and 50 elements, inclusive
      * @param team
      * Identifier of the team
