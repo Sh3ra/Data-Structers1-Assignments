@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1335087-1a30-41c1-95d9-527ceaa4e11d" name="Default Changelist" comment="laying bases for future work">
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/IPlayersFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/IPlayersFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="b1335087-1a30-41c1-95d9-527ceaa4e11d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            <state relative-caret-position="255">
+              <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555131109742</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="laying bases for future work">
+      <created>1555146482672</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555146482672</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -170,6 +174,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.18683812" />
       <window_info id="Structure" order="1" sideWeight="0.502439" side_tool="true" visible="true" weight="0.18683812" />
@@ -215,8 +220,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="255">
+          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
