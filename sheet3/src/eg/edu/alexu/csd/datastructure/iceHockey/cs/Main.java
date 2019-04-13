@@ -27,7 +27,7 @@ public class Main implements IPlayersFinder{
         {
             Pos[index] = new Point();
         }
-        //Pos= findPlayers(new String[]{"33JUBU33","3U3O4433", "O33P44NB", "PO3NSDP3", "VNDSD333", "OINFD33X" }, 3, 16);
+        Pos= findPlayers(new String[]{"33JUBU33","3U3O4433", "O33P44NB", "PO3NSDP3", "VNDSD333", "OINFD33X" }, 3, 16);
         for (Point i : Pos) {
             System.out.println("("+i.x+","+i.y+")");
         }
