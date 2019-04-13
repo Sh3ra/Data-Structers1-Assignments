@@ -14,6 +14,6 @@ public interface IPlayersFinder {
      * @return
      * Array of players locations of the given team
      */
-    java.awt.Point[] findPlayers(String[] photo, int team, int threshold);
+    java.awt.Point[]  findPlayers(String[] photo, int team, int threshold);
 
 }
