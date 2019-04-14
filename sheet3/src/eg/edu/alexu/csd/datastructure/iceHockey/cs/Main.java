@@ -2,8 +2,54 @@ package eg.edu.alexu.csd.datastructure.iceHockey.cs;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class Main implements IPlayersFinder{
+
+    public  static  int countElements(String[] photo,int team,int i, int j,boolean[][] visited)
+    {
+     int count=1;
+        visited[i][j]=true;
+        if(i+1<photo.length)
+        {
+            char z=(char)(team+48);
+            if(photo[i+1].charAt(j)==z && !visited[i+1][j])
+            {
+                visited[i+1][j]=true;
+                count=count+countElements(photo,team,i+1,j,visited);
+            }
+        }
+        if (i-1>=0)
+        {
+            char z=(char)(team+48);
+            if(photo[i-1].charAt(j)==z && !visited[i-1][j])
+            {
+                visited[i-1][j]=true;
+                count=count+countElements(photo,team,i-1,j,visited);
+            }
+        }
+        if(j+1<photo[i].length())
+        {
+            char z=(char)(team+48);
+            if(photo[i].charAt(j+1)==z && !visited[i][j+1])
+            {
+                visited[i][j+1]=true;
+                count=count+countElements(photo,team,i,j+1,visited);
+            }
+        }
+        if(j-1>=0)
+        {
+            char z=(char)(team+48);
+            if(photo[i].charAt(j-1)==z && !visited[i][j-1])
+            {
+                visited[i][j-1]=true;
+                count=count+countElements(photo,team,i,j-1,visited);
+            }
+        }
+        return  count;
+    }
+
     @Override
     public  Point[] findPlayers(String[] photo, int team, int threshold) {
         ArrayList<Point> Pos = new ArrayList<>();
@@ -202,7 +248,6 @@ public class Main implements IPlayersFinder{
                 for(int y=0;y<visited[w].length;y++)
                     visited[w][y]=false;
             }
-        //lef wa7ed wa7ed we el ta5doh 7awel el rectagel kolo le 'a'
             for(int i=0;i<photo.length;i++)
             {
                 for(int j=0;j<photo[i].length();j++)
@@ -235,44 +280,59 @@ public class Main implements IPlayersFinder{
                                 visited[w][y]=false;
                         }
                         int maxY=getMaxY(photo,team,i,j,visited);
-                        int area=((maxX-minX+1)*team)*((maxY-minY+1)*team);
+                        for (int w=0;w<visited.length;w++)
+                        {
+                            for(int y=0;y<visited[w].length;y++)
+                                visited[w][y]=false;
+                        }
+                        int area=4*countElements(photo,team,i,j,visited);
                         if(area>=threshold)
                         {
                             temp.x=(minX+maxX+1);
                             temp.y=minY+maxY+1;
-                            boolean check=false;
+                            boolean check;
                             check=false;
-                            for (Point po : Pos) {
-                                if(po==temp)
+                            for (int k=0;k<Pos.size();k++) {
+                                if(Pos.contains(temp))
                                 {
                                     check=true;
                                     break;
                                 }
                             }
-                            if(check)
-                            Pos.add(temp);
+                            if(!check)
+                            {
+                                Pos.add(new Point(temp));
+                            }
                         }
                     }
 
                 }
             }
-
-       // Pos.sort();
         Point[] line=new Point[Pos.size()];
         for (int index = 0; index < Pos.size(); index++)
         {
             line[index] = new Point(Pos.get(index));
+
         }
+            Arrays.sort(Pos, new Comparator<Point>() {
+                int compare(Point a, Point b) {
+                    int xComp = Integer.compare(a.x, b.x);
+                    if(xComp == 0)
+                        return Integer.compare(a.y, b.y);
+                    else
+                        return xComp;
+                }
+            });
         return line;
     }
     public static void main(String[] args) {
         //write a way to get the size of Pos
-        Point[] Pos= new Point[4];
+        Point[] Pos= new Point[1];
         for (int index = 0; index < Pos.length; index++)
         {
             Pos[index] = new Point();
         }
-       Pos= findPlayers1(new String[]{"33JUBU33","3U3O4433", "O33P44NB", "PO3NSDP3", "VNDSD333", "OINFD33X" }, 3, 16);
+       Pos= findPlayers1(new String[]{"44444H44S4", "K444K4L444", "4LJ44T44XH", "444O4VIF44", "44C4D4U444", "4V4Y4KB4M4", "G4W4HP4O4W", "4444ZDQ4S4", "4BR4Y4A444", "4G4V4T4444" }, 4, 16);
         for (Point i : Pos) {
             System.out.println("("+i.x+","+i.y+")");
         }
