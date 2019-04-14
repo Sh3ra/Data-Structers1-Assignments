@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1335087-1a30-41c1-95d9-527ceaa4e11d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sheet3/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,20 +23,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="317" column="46" lean-forward="true" selection-start-line="317" selection-start-column="46" selection-end-line="317" selection-end-column="46" />
+            <state relative-caret-position="102">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#MySort#0;class#Main#0" />
                 <element signature="method#countElements#0;class#Main#0" />
                 <element signature="method#findPlayers#0;class#Main#0" />
+                <element signature="e#3501#3646#1" />
+                <element signature="e#3796#3941#1" />
+                <element signature="e#4091#4236#1" />
+                <element signature="e#4386#4531#1" />
                 <element signature="method#getMinx#0;class#Main#0" />
                 <element signature="method#getMaxX#0;class#Main#0" />
                 <element signature="method#getMinY#0;class#Main#0" />
                 <element signature="method#getMaxY#0;class#Main#0" />
-                <element signature="e#7316#7425#1" />
-                <element signature="e#7611#7720#1" />
-                <element signature="e#7906#8015#1" />
-                <element signature="e#8442#8587#1" />
               </folding>
             </state>
           </provider>
@@ -196,8 +196,8 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49268293" visible="true" weight="0.19288956" />
-      <window_info id="Structure" order="1" sideWeight="0.50731707" side_tool="true" visible="true" weight="0.19288956" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49333334" visible="true" weight="0.19288956" />
+      <window_info id="Structure" order="1" sideWeight="0.50666666" side_tool="true" visible="true" weight="0.19288956" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -206,14 +206,14 @@
       <window_info id="Favorites" order="7" sideWeight="0.502439" side_tool="true" weight="0.18683812" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26350245" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26350245" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="9" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.2700491" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
@@ -245,20 +245,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="317" column="46" lean-forward="true" selection-start-line="317" selection-start-column="46" selection-end-line="317" selection-end-column="46" />
+        <state relative-caret-position="102">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#MySort#0;class#Main#0" />
             <element signature="method#countElements#0;class#Main#0" />
             <element signature="method#findPlayers#0;class#Main#0" />
+            <element signature="e#3501#3646#1" />
+            <element signature="e#3796#3941#1" />
+            <element signature="e#4091#4236#1" />
+            <element signature="e#4386#4531#1" />
             <element signature="method#getMinx#0;class#Main#0" />
             <element signature="method#getMaxX#0;class#Main#0" />
             <element signature="method#getMinY#0;class#Main#0" />
             <element signature="method#getMaxY#0;class#Main#0" />
-            <element signature="e#7316#7425#1" />
-            <element signature="e#7611#7720#1" />
-            <element signature="e#7906#8015#1" />
-            <element signature="e#8442#8587#1" />
           </folding>
         </state>
       </provider>
