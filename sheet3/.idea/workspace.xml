@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1335087-1a30-41c1-95d9-527ceaa4e11d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sheet3/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sheet3/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="b1335087-1a30-41c1-95d9-527ceaa4e11d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="249" column="29" lean-forward="true" selection-start-line="249" selection-start-column="29" selection-end-line="249" selection-end-column="29" />
+            <state relative-caret-position="123">
+              <caret line="243" column="40" selection-start-line="243" selection-start-column="40" selection-end-line="243" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getMinY#0;class#Main#0" />
@@ -169,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555146482672</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="only calculating area is left">
+      <created>1555219797933</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555219797933</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -185,8 +188,8 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49318802" visible="true" weight="0.19288956" />
-      <window_info id="Structure" order="1" sideWeight="0.506812" side_tool="true" visible="true" weight="0.19288956" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49268293" visible="true" weight="0.19288956" />
+      <window_info id="Structure" order="1" sideWeight="0.50731707" side_tool="true" visible="true" weight="0.19288956" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -196,13 +199,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.26350245" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39934534" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Messages" order="9" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
@@ -217,7 +220,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start of assignment" />
     <MESSAGE value="laying bases for future work" />
-    <option name="LAST_COMMIT_MESSAGE" value="laying bases for future work" />
+    <MESSAGE value="only calculating area is left" />
+    <option name="LAST_COMMIT_MESSAGE" value="only calculating area is left" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -238,8 +242,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="249" column="29" lean-forward="true" selection-start-line="249" selection-start-column="29" selection-end-line="249" selection-end-column="29" />
+        <state relative-caret-position="123">
+          <caret line="243" column="40" selection-start-line="243" selection-start-column="40" selection-end-line="243" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getMinY#0;class#Main#0" />
