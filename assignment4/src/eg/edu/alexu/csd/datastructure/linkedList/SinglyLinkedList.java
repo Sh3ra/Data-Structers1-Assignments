@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.datastructure.linkedList;
 
 public class SinglyLinkedList implements ILinkedList {
 
+    SLNode head;
     class SLNode
     {
         Object val;
