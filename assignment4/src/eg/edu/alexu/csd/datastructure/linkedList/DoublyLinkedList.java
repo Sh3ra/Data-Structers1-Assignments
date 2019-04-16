@@ -13,7 +13,7 @@ public class DoublyLinkedList implements ILinkedList{
 		}
 	}
 	
-	 DLNode head;
+	DLNode head;
 
 	public void add(int index, Object element) {
 		
@@ -51,8 +51,15 @@ public class DoublyLinkedList implements ILinkedList{
 	}
 
 	public int size() {
-		
-		return 0;
+		DLNode temp = head;
+		if(head == null)
+			return 0;
+		int size = 1;
+		while(temp.next != null) {
+			size++;
+			temp = temp.next;
+		}			
+		return size;
 	}
 
 	public ILinkedList sublist(int fromIndex, int toIndex) {
