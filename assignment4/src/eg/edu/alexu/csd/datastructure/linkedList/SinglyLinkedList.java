@@ -13,7 +13,6 @@ public class SinglyLinkedList implements ILinkedList {
             this.next=null;
         }
     }
-    @Override
     public void add(int index, Object element) {
         if(this.size()>index)
         {
@@ -28,37 +27,35 @@ public class SinglyLinkedList implements ILinkedList {
         }
     }
 
-    @Override
     public void add(Object element) {
 
     }
 
-    @Override
+    
     public Object get(int index) {
         return null;
     }
 
-    @Override
+    
     public void set(int index, Object element) {
 
     }
 
-    @Override
+    
     public void clear() {
     head=null;
     }
 
-    @Override
+    
     public boolean isEmpty() {
         return  head==null;
     }
 
-    @Override
+    
     public void remove(int index) {
 
     }
 
-    @Override
     public int size() {
         int count=0;
         SLNode temp=head;
@@ -70,12 +67,11 @@ public class SinglyLinkedList implements ILinkedList {
         return count;
     }
 
-    @Override
     public ILinkedList sublist(int fromIndex, int toIndex) {
         return null;
     }
 
-    @Override
+
     public boolean contains(Object o) {
         return false;
     }
