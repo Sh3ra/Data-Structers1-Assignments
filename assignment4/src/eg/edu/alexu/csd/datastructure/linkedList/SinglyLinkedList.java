@@ -80,7 +80,14 @@ public class SinglyLinkedList implements ILinkedList {
 
     
     public void remove(int index) {
-
+        if(head==null)return;
+        if(this.size()>index) {
+            SLNode temp = head;
+            for (int i = 0; i < index-1; i++) {
+                temp = temp.next;
+            }
+            temp.next=temp.next.next;
+        }
     }
 
     public int size() {
@@ -100,6 +107,12 @@ public class SinglyLinkedList implements ILinkedList {
 
 
     public boolean contains(Object o) {
+        SLNode temp=head;
+        while (temp!=null)
+        {
+            if(temp.val==o)return true;
+            temp=temp.next;
+        }
         return false;
     }
 }
