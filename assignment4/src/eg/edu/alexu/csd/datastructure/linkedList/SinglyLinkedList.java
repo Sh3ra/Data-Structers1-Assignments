@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.linkedList;
 
 public class SinglyLinkedList implements ILinkedList {
 
-    SLNode head;
+    private SLNode head;
     class SLNode
     {
         Object val;
@@ -50,7 +50,14 @@ public class SinglyLinkedList implements ILinkedList {
 
     @Override
     public int size() {
-        return 0;
+        int count=0;
+        SLNode temp=head;
+        while (temp!=null)
+        {
+            count++;
+            temp=temp.next;
+        }
+        return count;
     }
 
     @Override
