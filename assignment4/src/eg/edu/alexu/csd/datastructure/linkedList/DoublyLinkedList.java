@@ -1,6 +1,19 @@
 package eg.edu.alexu.csd.datastructure.linkedList;
 
 public class DoublyLinkedList implements ILinkedList{
+	
+	class DLNode{
+		Object value;
+		DLNode next;
+		DLNode prev;
+		DLNode(Object value){
+			this.value = value;
+			this.next = null;
+			this.prev = null;
+		}
+	}
+	
+	 DLNode head;
 
 	public void add(int index, Object element) {
 		
