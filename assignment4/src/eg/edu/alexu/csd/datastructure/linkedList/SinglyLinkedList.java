@@ -2,6 +2,16 @@ package eg.edu.alexu.csd.datastructure.linkedList;
 
 public class SinglyLinkedList implements ILinkedList {
 
+    class SLNode
+    {
+        Object val;
+        SLNode next;
+        SLNode(Object val)
+        {
+            this.val=val;
+            this.next=null;
+        }
+    }
     @Override
     public void add(int index, Object element) {
 
