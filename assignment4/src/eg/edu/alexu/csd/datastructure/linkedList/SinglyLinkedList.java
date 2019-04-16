@@ -40,7 +40,7 @@ public class SinglyLinkedList implements ILinkedList {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return  head==null;
     }
 
     @Override
