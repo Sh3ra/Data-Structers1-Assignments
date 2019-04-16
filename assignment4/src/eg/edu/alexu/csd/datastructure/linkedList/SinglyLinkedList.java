@@ -18,11 +18,13 @@ public class SinglyLinkedList implements ILinkedList {
         if(this.size()>index)
         {
             SLNode temp=head;
-            for(int i=0;i<=index;i++)
+            for(int i=1;i<index;i++)
             {
                 temp=temp.next;
             }
-            temp.val=element;
+            SLNode newNode=new SLNode(element);
+            newNode.next=temp.next;
+            temp.next=newNode;
         }
     }
 
