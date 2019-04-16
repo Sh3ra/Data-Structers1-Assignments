@@ -54,7 +54,7 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public void set(int index, Object element) {
-		if(head != null || index < this.size()) {
+		if(head != null && index < this.size()) {
 			DLNode temp = head;
 			for(int i=0; i<index; i++) {
 				temp = temp.next;
@@ -72,8 +72,14 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public void remove(int index) {
-		
-		
+		if(head != null && index < this.size()) {
+			DLNode temp = head;
+			for(int i=0; i<index -1 ; i++) {
+				temp = temp.next;
+			}
+			temp.next = temp.next.next;
+			temp.next.prev = temp;
+		}
 	}
 
 	public int size() {
@@ -94,7 +100,12 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public boolean contains(Object o) {
-		
+		DLNode temp = head;
+		while(temp != null) {
+			if(temp.value == o)
+				return true;
+			temp=temp.next;
+		}
 		return false;
 	}
 
