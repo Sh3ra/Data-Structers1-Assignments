@@ -13,10 +13,10 @@ public class DoublyLinkedList implements ILinkedList {
 		}
 	}
 	
-	DLNode head;
+	private DLNode head;
 
 	public void add(int index, Object element) {
-		if(this.size() > index + 1) {
+		if(this.size() > index) {
 			DLNode temp = head;
 			for(int i=0; i<index-1; i++) {
 				temp = temp.next;
@@ -30,8 +30,15 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public void add(Object element) {
-		
-		
+		DLNode temp = head;
+		DLNode newNode = new DLNode(element);
+		if(head == null)
+			head = newNode;
+		while(temp.next!=null) {
+			temp=temp.next;
+		}
+		temp.next = newNode;
+		newNode.prev = temp;
 	}
 
 	public Object get(int index) {
@@ -49,9 +56,7 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public boolean isEmpty() {
-		if(head == null)
-			return true;
-		return false;
+		return head == null;
 	}
 
 	public void remove(int index) {
