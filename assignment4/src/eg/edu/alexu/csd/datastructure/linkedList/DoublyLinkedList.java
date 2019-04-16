@@ -41,7 +41,8 @@ public class DoublyLinkedList implements ILinkedList{
 	}
 
 	public boolean isEmpty() {
-		
+		if(head == null)
+			return true;
 		return false;
 	}
 
