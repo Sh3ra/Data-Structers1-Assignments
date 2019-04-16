@@ -41,12 +41,29 @@ public class SinglyLinkedList implements ILinkedList {
 
     
     public Object get(int index) {
+        if(this.size()>index)
+        {
+            SLNode temp=head;
+            for(int i=0;i<index;i++)
+            {
+                temp=temp.next;
+            }
+            return temp.val;
+        }
         return null;
     }
-
     
     public void set(int index, Object element) {
 
+        if(this.size()>index)
+        {
+            SLNode temp=head;
+            for(int i=0;i<index;i++)
+            {
+                temp=temp.next;
+            }
+            temp.val=element;
+        }
     }
 
     
