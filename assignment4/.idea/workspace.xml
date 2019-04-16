@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33afa98b-3f19-45a0-9013-64066152603b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/DoublyLinkedList$DLNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/DoublyLinkedList$DLNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/DoublyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList$SLNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList$SLNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/DoublyLinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList.java" afterDir="false" />
@@ -30,15 +29,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+            <state relative-caret-position="212">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding>
                 <element signature="class#SLNode#0;class#SinglyLinkedList#0" />
                 <element signature="method#add#0;class#SinglyLinkedList#0" />
                 <element signature="method#add#1;class#SinglyLinkedList#0" />
+                <element signature="method#get#0;class#SinglyLinkedList#0" />
                 <element signature="e#1329#1330#0" expanded="true" />
                 <element signature="e#1350#1351#0" expanded="true" />
                 <element signature="e#1387#1388#0" expanded="true" />
@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/DoublyLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+            <state relative-caret-position="561">
+              <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
               <folding>
                 <element signature="e#970#971#0" expanded="true" />
                 <element signature="e#988#989#0" expanded="true" />
@@ -213,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555428190070</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="set done">
+      <created>1555429278505</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555429278505</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -256,7 +263,8 @@
     <MESSAGE value="Merge branches 'master' and 'thebetterbranch' of https://github.com/Sh3ra/Data-Structers1-Assignments&#10;&#10;# Conflicts:&#10;#&#9;assignment4/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/ILinkedList.class&#10;#&#9;assignment4/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/Main.class" />
     <MESSAGE value="2arf" />
     <MESSAGE value="2nd add sll" />
-    <option name="LAST_COMMIT_MESSAGE" value="2nd add sll" />
+    <MESSAGE value="set done" />
+    <option name="LAST_COMMIT_MESSAGE" value="set done" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -294,27 +302,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/DoublyLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-          <folding>
-            <element signature="e#970#971#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="e#1017#1018#0" expanded="true" />
-            <element signature="e#1043#1044#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+        <state relative-caret-position="212">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="class#SLNode#0;class#SinglyLinkedList#0" />
             <element signature="method#add#0;class#SinglyLinkedList#0" />
             <element signature="method#add#1;class#SinglyLinkedList#0" />
+            <element signature="method#get#0;class#SinglyLinkedList#0" />
             <element signature="e#1329#1330#0" expanded="true" />
             <element signature="e#1350#1351#0" expanded="true" />
             <element signature="e#1387#1388#0" expanded="true" />
@@ -323,6 +319,19 @@
             <element signature="e#1755#1756#0" expanded="true" />
             <element signature="e#1797#1798#0" expanded="true" />
             <element signature="e#1825#1826#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/DoublyLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+          <folding>
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
           </folding>
         </state>
       </provider>
