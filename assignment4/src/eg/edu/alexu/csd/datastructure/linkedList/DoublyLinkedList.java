@@ -13,7 +13,7 @@ public class DoublyLinkedList implements ILinkedList{
 		}
 	}
 	
-	DLNode head;
+	private DLNode head;
 
 	public void add(int index, Object element) {
 		

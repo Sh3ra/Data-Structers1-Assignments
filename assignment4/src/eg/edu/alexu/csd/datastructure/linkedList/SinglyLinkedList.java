@@ -15,7 +15,15 @@ public class SinglyLinkedList implements ILinkedList {
     }
     @Override
     public void add(int index, Object element) {
-
+        if(this.size()>index)
+        {
+            SLNode temp=head;
+            for(int i=0;i<=index;i++)
+            {
+                temp=temp.next;
+            }
+            temp.val=element;
+        }
     }
 
     @Override
@@ -35,7 +43,7 @@ public class SinglyLinkedList implements ILinkedList {
 
     @Override
     public void clear() {
-
+    head=null;
     }
 
     @Override
