@@ -16,7 +16,7 @@ public class DoublyLinkedList implements ILinkedList {
 	DLNode head;
 
 	public void add(int index, Object element) {
-		if(this.size() > index + 1) {
+		if(this.size() > index) {
 			DLNode temp = head;
 			for(int i=0; i<index-1; i++) {
 				temp = temp.next;
