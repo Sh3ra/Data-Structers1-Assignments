@@ -28,7 +28,15 @@ public class SinglyLinkedList implements ILinkedList {
     }
 
     public void add(Object element) {
-
+        SLNode temp=head;
+        SLNode newNode=new SLNode(element);
+        if(head==null)
+        {
+            head=newNode;
+        }
+        while (temp.next!=null)
+            temp=temp.next;
+        temp.next= newNode;
     }
 
     

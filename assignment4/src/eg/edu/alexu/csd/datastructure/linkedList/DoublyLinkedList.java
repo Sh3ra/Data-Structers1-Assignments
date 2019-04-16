@@ -42,13 +42,25 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public Object get(int index) {
-		
-		return null;
+		Object val;
+		if(head == null || index >= this.size())
+			return null;
+		DLNode temp = head;
+		for(int i=0; i<index; i++) {
+			temp = temp.next;
+		}
+		val = temp.value;
+		return val;
 	}
 
 	public void set(int index, Object element) {
-		
-		
+		if(head != null || index < this.size()) {
+			DLNode temp = head;
+			for(int i=0; i<index; i++) {
+				temp = temp.next;
+			}
+			temp.value = element;	
+		}
 	}
 
 	public void clear() {
