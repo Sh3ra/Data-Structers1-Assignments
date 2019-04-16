@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1335087-1a30-41c1-95d9-527ceaa4e11d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,17 +22,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="132">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#MySort#0;class#Main#0" />
                 <element signature="method#countElements#0;class#Main#0" />
                 <element signature="method#findPlayers#0;class#Main#0" />
-                <element signature="e#3501#3646#1" />
-                <element signature="e#3796#3941#1" />
-                <element signature="e#4091#4236#1" />
-                <element signature="e#4386#4531#1" />
                 <element signature="method#getMinx#0;class#Main#0" />
                 <element signature="method#getMaxX#0;class#Main#0" />
                 <element signature="method#getMinY#0;class#Main#0" />
@@ -83,30 +77,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="sheet3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sheet3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sheet3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sheet3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sheet3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sheet3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cs" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -180,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555219797933</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="done">
+      <created>1555267408103</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555267408103</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -194,10 +174,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49333334" visible="true" weight="0.19288956" />
-      <window_info id="Structure" order="1" sideWeight="0.50666666" side_tool="true" visible="true" weight="0.19288956" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4902439" visible="true" weight="0.19591528" />
+      <window_info id="Structure" order="1" sideWeight="0.5097561" side_tool="true" visible="true" weight="0.19591528" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -206,12 +185,12 @@
       <window_info id="Favorites" order="7" sideWeight="0.502439" side_tool="true" weight="0.18683812" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26350245" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26350245" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.2700491" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289689" />
@@ -229,27 +208,20 @@
     <MESSAGE value="start of assignment" />
     <MESSAGE value="laying bases for future work" />
     <MESSAGE value="only calculating area is left" />
-    <option name="LAST_COMMIT_MESSAGE" value="only calculating area is left" />
+    <MESSAGE value="done" />
+    <option name="LAST_COMMIT_MESSAGE" value="done" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/IPlayersFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="132">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#MySort#0;class#Main#0" />
             <element signature="method#countElements#0;class#Main#0" />
             <element signature="method#findPlayers#0;class#Main#0" />
             <element signature="e#3501#3646#1" />
@@ -261,6 +233,13 @@
             <element signature="method#getMinY#0;class#Main#0" />
             <element signature="method#getMaxY#0;class#Main#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/iceHockey/cs/IPlayersFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
         </state>
       </provider>
     </entry>
