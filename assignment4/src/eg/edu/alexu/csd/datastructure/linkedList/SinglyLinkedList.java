@@ -1,5 +1,7 @@
 package eg.edu.alexu.csd.datastructure.linkedList;
 
+import jdk.nashorn.internal.ir.CatchNode;
+
 public class SinglyLinkedList implements ILinkedList {
 
      SLNode head;
@@ -14,17 +16,41 @@ public class SinglyLinkedList implements ILinkedList {
         }
     }
     public void add(int index, Object element) {
+       try{
+           if(index>size())
+               throw new IndexOutOfBoundsException("Index Out Of Boundaries");
+        SLNode newNode=new SLNode(element);
         if(this.size()>index)
         {
             SLNode temp=head;
+            if(index==0)
+            {
+                newNode.next=head;
+                head=newNode;
+                return;
+            }
             for(int i=1;i<index;i++)
             {
                 temp=temp.next;
             }
-            SLNode newNode=new SLNode(element);
             newNode.next=temp.next;
             temp.next=newNode;
         }
+        if(index==size())
+        {
+            SLNode temp=head;
+            while (temp.next!=null)
+            {
+                temp=temp.next;
+            }
+            temp.next=newNode;
+        }
+       }
+       catch (IndexOutOfBoundsException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+
     }
 
     public void add(Object element) {

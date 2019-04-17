@@ -16,16 +16,41 @@ public class DoublyLinkedList implements ILinkedList {
 	 DLNode head;
 
 	public void add(int index, Object element) {
+		try{
+		if(index>size())
+			throw new IndexOutOfBoundsException("Index Out Of Boundaries");
+		DLNode newNode = new DLNode(element);
 		if(this.size() > index) {
 			DLNode temp = head;
+			if(index==0)
+			{
+				newNode.next=head;
+				head.prev=newNode;
+				head=newNode;
+				return;
+			}
 			for(int i=0; i<index-1; i++) {
 				temp = temp.next;
 			}
-			DLNode newNode = new DLNode(element);
 			temp.next.prev = newNode;
 			newNode.next = temp.next;
 			temp.next = newNode;
 			newNode.prev = temp;
+		}
+		if(size()==index)
+		{
+			DLNode temp=head;
+			while (temp.next!=null)
+			{
+				temp=temp.next;
+			}
+			newNode.prev=temp;
+			temp.next=newNode;
+		}
+		}
+		catch (IndexOutOfBoundsException ex)
+		{
+			System.out.println(ex.getMessage());
 		}
 	}
 

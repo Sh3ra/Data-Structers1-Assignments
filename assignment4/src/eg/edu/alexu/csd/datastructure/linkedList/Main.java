@@ -8,6 +8,7 @@ public class Main {
 	test.add(5);
 	test.add(0);
 	test.add(5555);
+	test.add(4,90);
 
         /*SinglyLinkedList.SLNode temp;
         temp=test.head;
