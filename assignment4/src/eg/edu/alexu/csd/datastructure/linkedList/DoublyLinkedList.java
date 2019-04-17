@@ -109,14 +109,38 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public void remove(int index) {
-		if(head != null && index < this.size()) {
-			DLNode temp = head;
-			for(int i=0; i<index -1 ; i++) {
-				temp = temp.next;
-			}
-			temp.next = temp.next.next;
-			temp.next.prev = temp;
-		}
+        try {
+            if (index > size() - 1 || index < 0)
+                throw new IndexOutOfBoundsException("Index Out Of Boundaries");
+            if (head == null) return;
+            if (index == 0) {
+                head = head.next;
+                head.prev=null;
+                return;
+            }
+            if (index < this.size()) {
+                DLNode temp = head;
+                if(index==size()-1)
+                {
+                    while (temp.next.next!=null)
+                    {
+                        temp=temp.next;
+                    }
+                    temp.next=null;
+                }
+                else{
+                for (int i = 0; i < index - 1; i++) {
+                    temp = temp.next;
+                }
+                temp.next = temp.next.next;
+                temp.next.prev = temp;
+            }}
+        }
+        catch (IndexOutOfBoundsException ex)
+        {
+            System.out.println(ex.getMessage());
+            System.exit(1);
+        }
 	}
 
 	public int size() {

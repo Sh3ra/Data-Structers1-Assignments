@@ -11,7 +11,7 @@ public class Main {
 	test.add(3,90);
 
 
-      /*  SinglyLinkedList.SLNode temp;
+    /*SinglyLinkedList.SLNode temp;
         temp=test.head;
         while (temp!=null) {
             System.out.println(temp.val);
