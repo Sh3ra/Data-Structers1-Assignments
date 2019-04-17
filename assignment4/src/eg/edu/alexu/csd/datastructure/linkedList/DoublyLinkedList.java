@@ -155,9 +155,21 @@ public class DoublyLinkedList implements ILinkedList {
 		return size;
 	}
 
-	public ILinkedList sublist(int fromIndex, int toIndex) {
-		
-		return null;
+	public DoublyLinkedList sublist(int fromIndex, int toIndex) {
+		DoublyLinkedList newList = new DoublyLinkedList();
+		try {
+			if(fromIndex < 0 || toIndex < 0 || fromIndex > this.size()-1 || toIndex > this.size()-1 || toIndex < fromIndex) {
+				throw new IndexOutOfBoundsException("Index Out of Boundaries");
+			}
+			for(int index = fromIndex; index<=toIndex; index++) {
+				newList.add(this.get(index));
+			}
+		}
+		catch (IndexOutOfBoundsException ex) {
+			System.out.println(ex.getMessage());
+			System.exit(0);
+		}
+		return newList;
 	}
 
 	public boolean contains(Object o) {
