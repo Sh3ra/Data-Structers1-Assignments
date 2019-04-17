@@ -16,16 +16,42 @@ public class DoublyLinkedList implements ILinkedList {
 	DLNode head;
 
 	public void add(int index, Object element) {
+		try{
+		if(index>size())
+			throw new IndexOutOfBoundsException("Index Out Of Boundaries");
+		DLNode newNode = new DLNode(element);
 		if(this.size() > index) {
 			DLNode temp = head;
+			if(index==0)
+			{
+				newNode.next=head;
+				head.prev=newNode;
+				head=newNode;
+				return;
+			}
 			for(int i=0; i<index-1; i++) {
 				temp = temp.next;
 			}
-			DLNode newNode = new DLNode(element);
 			temp.next.prev = newNode;
 			newNode.next = temp.next;
 			temp.next = newNode;
 			newNode.prev = temp;
+		}
+		if(size()==index)
+		{
+			DLNode temp=head;
+			while (temp.next!=null)
+			{
+				temp=temp.next;
+			}
+			newNode.prev=temp;
+			temp.next=newNode;
+		}
+		}
+		catch (IndexOutOfBoundsException ex)
+		{
+			System.out.println(ex.getMessage());
+			System.exit(1);
 		}
 	}
 
@@ -56,12 +82,21 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public void set(int index, Object element) {
-		if(head != null && index < this.size()) {
-			DLNode temp = head;
-			for(int i=0; i<index; i++) {
-				temp = temp.next;
+		try {
+			if (index > size() - 1 || index < 0)
+				throw new IndexOutOfBoundsException("Index Out Of Boundaries");
+			if (head != null && index < this.size()) {
+				DLNode temp = head;
+				for (int i = 0; i < index; i++) {
+					temp = temp.next;
+				}
+				temp.value = element;
 			}
-			temp.value = element;	
+		}
+		catch (IndexOutOfBoundsException ex)
+		{
+			System.out.println(ex.getMessage());
+			System.exit(1);
 		}
 	}
 
@@ -74,14 +109,38 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public void remove(int index) {
-		if(head != null && index < this.size()) {
-			DLNode temp = head;
-			for(int i=0; i<index -1 ; i++) {
-				temp = temp.next;
-			}
-			temp.next = temp.next.next;
-			temp.next.prev = temp;
-		}
+        try {
+            if (index > size() - 1 || index < 0)
+                throw new IndexOutOfBoundsException("Index Out Of Boundaries");
+            if (head == null) return;
+            if (index == 0) {
+                head = head.next;
+                head.prev=null;
+                return;
+            }
+            if (index < this.size()) {
+                DLNode temp = head;
+                if(index==size()-1)
+                {
+                    while (temp.next.next!=null)
+                    {
+                        temp=temp.next;
+                    }
+                    temp.next=null;
+                }
+                else{
+                for (int i = 0; i < index - 1; i++) {
+                    temp = temp.next;
+                }
+                temp.next = temp.next.next;
+                temp.next.prev = temp;
+            }}
+        }
+        catch (IndexOutOfBoundsException ex)
+        {
+            System.out.println(ex.getMessage());
+            System.exit(1);
+        }
 	}
 
 	public int size() {
