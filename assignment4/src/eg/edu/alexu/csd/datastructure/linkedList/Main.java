@@ -8,15 +8,16 @@ public class Main {
 	test.add(5);
 	test.add(0);
 	test.add(5555);
-	test.add(4,90);
+	test.add(3,90);
 
-        /*SinglyLinkedList.SLNode temp;
+
+      /*  SinglyLinkedList.SLNode temp;
         temp=test.head;
         while (temp!=null) {
             System.out.println(temp.val);
             temp=temp.next;
         }*/
-        DoublyLinkedList.DLNode temp;
+       DoublyLinkedList.DLNode temp;
 
         temp=test.head;
         while (temp!=null) {

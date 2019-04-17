@@ -51,6 +51,7 @@ public class DoublyLinkedList implements ILinkedList {
 		catch (IndexOutOfBoundsException ex)
 		{
 			System.out.println(ex.getMessage());
+			System.exit(1);
 		}
 	}
 
@@ -81,12 +82,21 @@ public class DoublyLinkedList implements ILinkedList {
 	}
 
 	public void set(int index, Object element) {
-		if(head != null && index < this.size()) {
-			DLNode temp = head;
-			for(int i=0; i<index; i++) {
-				temp = temp.next;
+		try {
+			if (index > size() - 1 || index < 0)
+				throw new IndexOutOfBoundsException("Index Out Of Boundaries");
+			if (head != null && index < this.size()) {
+				DLNode temp = head;
+				for (int i = 0; i < index; i++) {
+					temp = temp.next;
+				}
+				temp.value = element;
 			}
-			temp.value = element;	
+		}
+		catch (IndexOutOfBoundsException ex)
+		{
+			System.out.println(ex.getMessage());
+			System.exit(1);
 		}
 	}
 
