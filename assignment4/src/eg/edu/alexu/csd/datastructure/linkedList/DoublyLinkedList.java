@@ -155,8 +155,8 @@ public class DoublyLinkedList implements ILinkedList {
 		return size;
 	}
 
-	public ILinkedList sublist(int fromIndex, int toIndex) {
-		
+	public DoublyLinkedList sublist(int fromIndex, int toIndex) {
+
 		return null;
 	}
 

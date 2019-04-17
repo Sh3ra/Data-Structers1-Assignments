@@ -66,7 +66,7 @@ public class SinglyLinkedList implements ILinkedList {
     }
 
     public Object get(int index) {
-        if(this.size()>index)
+        if(this.size()>index&& index>=0)
         {
             SLNode temp=head;
             for(int i=0;i<index;i++)
@@ -144,8 +144,25 @@ public class SinglyLinkedList implements ILinkedList {
         return count;
     }
 
-    public ILinkedList sublist(int fromIndex, int toIndex) {
-        return null;
+    public SinglyLinkedList sublist(int fromIndex, int toIndex) {
+        SinglyLinkedList newList=new SinglyLinkedList();
+
+        try{
+            if (fromIndex > size() - 1 || fromIndex < 0 || toIndex > size() - 1 || toIndex < 0 || toIndex<fromIndex )
+                throw new IndexOutOfBoundsException("Index Out Of Boundaries");
+
+            for(;fromIndex<=toIndex;fromIndex++)
+            {
+                newList.add(get(fromIndex));
+            }
+        }
+        catch(IndexOutOfBoundsException ex){
+            System.out.println(ex.getMessage());
+            System.exit(1);
+
+        }
+
+        return newList;
     }
 
 
