@@ -210,13 +210,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 							temp="";
 						}
 					}
-					//A.setPolynomial(p,terms);
-					for(int i=0;i<terms.length;i++)
-					{
-						for(int j=0;j<terms[i].length;j++)
-							System.out.println(terms[i][j]+" ");
-					}
-
+					A.setPolynomial(p,terms);
 				}
 			}
 		}

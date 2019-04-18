@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="33afa98b-3f19-45a0-9013-64066152603b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="120" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="72">
+              <caret line="212" column="45" lean-forward="true" selection-start-line="212" selection-start-column="45" selection-end-line="212" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -325,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555572205929</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="validation">
+      <created>1555584426018</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1555584426018</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -341,9 +346,9 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.4871407" side_tool="true" visible="true" weight="0.44189852" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5128593" visible="true" weight="0.44189852" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6376702" weight="0.39934534" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.48789713" side_tool="true" visible="true" weight="0.44189852" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5121029" visible="true" weight="0.44189852" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6369138" weight="0.39934534" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.4924357" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -413,19 +418,8 @@
     <MESSAGE value="interface of poly" />
     <MESSAGE value="main" />
     <MESSAGE value="setpolynomyal" />
-    <option name="LAST_COMMIT_MESSAGE" value="setpolynomyal" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java</url>
-          <line>118</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Singlelinkedlist.java" />
@@ -502,8 +496,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="120" selection-start-line="120" selection-end-line="120" />
+        <state relative-caret-position="72">
+          <caret line="212" column="45" lean-forward="true" selection-start-line="212" selection-start-column="45" selection-end-line="212" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
