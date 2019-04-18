@@ -158,8 +158,8 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 		int [][] result = new int [size][2];
 		for(int index = 0, i=0; index < R.size(); index ++, i++) {
 			if(R.get(index) != (Object) 0) {
-				result[i][0] = index;
-				result[i][1] = (int)R.get(index);
+				result[size-i-1][0] = index;
+				result[size-i-1][1] = (int)R.get(index);
 			}
 			else i--;
 		}
@@ -219,8 +219,8 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 		int [][] result = new int [size][2];
 		for(int index = 0, i=0; index < R.size(); index ++, i++) {
 			if(R.get(index) != (Object) 0) {
-				result[i][0] = index;
-				result[i][1] = (int)R.get(index);
+				result[size-i-1][0] = index;
+				result[size-i-1][1] = (int)R.get(index);
 			}
 			else i--;
 		}
