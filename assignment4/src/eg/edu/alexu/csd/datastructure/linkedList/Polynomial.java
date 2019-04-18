@@ -3,13 +3,15 @@ package eg.edu.alexu.csd.datastructure.linkedList;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static java.lang.Math.pow;
+
 public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
-	private static Polynomial A=new Polynomial();
+	private static Polynomial A = new Polynomial();
+	private static Polynomial B = new Polynomial();
+	private static Polynomial C = new Polynomial();
+	private  static Polynomial R = new Polynomial();
 
-	private static Polynomial B=new Polynomial();
-	private static Polynomial C=new Polynomial();
-	private  static Polynomial R=new Polynomial();
 	public void setPolynomial(char poly, int[][] terms) {
 		switch (poly)
 		{
@@ -53,39 +55,244 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
 	}
 
-	
 	public String print(char poly) {
-		
-		return null;
+
+		Polynomial temp = new Polynomial();
+		switch (poly) {
+		case 'A':
+			temp.head = A.head;
+			break;
+		case 'B':
+			temp.head = B.head;
+			break;
+		case 'C':
+			temp.head = C.head;
+			break;
+		case 'R':
+			temp.head = R.head;
+			break;
+		}
+
+		String polynomial = new String();
+
+		for(int index = 0; index < temp.size(); index++) {
+			if(temp.get(index) != (Object)0) {
+				if (index == 0)
+					polynomial = temp.get(index) + polynomial;
+				else if (index == 1)
+					polynomial = (temp.get(index)==(Object)1?"":temp.get(index)) + "x" + polynomial;
+				else
+					polynomial = (temp.get(index)==(Object)1?"":temp.get(index)) + "x^" + index + polynomial;
+				polynomial = "+" + polynomial;
+			}
+		}
+
+		if(polynomial.length()>0)
+			polynomial = polynomial.substring(1);
+
+		return polynomial;
 	}
 
-	
 	public void clearPolynomial(char poly) {
-
-		
+		switch (poly)
+        {
+            case 'A':A.clear();
+            break;
+            case 'B':B.clear();
+            break;
+            case 'C':C.clear();
+            break;
+            case 'R':R.clear();
+            break;
+        }
 	}
 
-	
 	public float evaluatePolynomial(char poly, float value) {
-
-		return 0;
+        float result=0;
+        switch (poly)
+        {
+            case 'A':
+            {
+                SLNode temp=A.head;
+                int index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float)pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }
+            }
+                break;
+            case 'B':
+            {
+                SLNode temp=B.head;
+                int index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float)pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }
+            }
+                break;
+            case 'C':
+            {
+                SLNode temp=C.head;
+                int index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float)pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }
+            }
+                break;
+            case 'R':
+            {
+                SLNode temp=R.head;
+                int index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float)pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }
+            }
+                break;
+        }
+		return result;
 	}
 
-	
 	public int[][] add(char poly1, char poly2) {
-		
-		return null;
+
+		Polynomial temp1 = new Polynomial();
+		Polynomial temp2 = new Polynomial();
+
+		switch (poly1) {
+		case 'A':
+			temp1.head = A.head;
+			break;
+		case 'B':
+			temp1.head = B.head;
+			break;
+		case 'C':
+			temp1.head = C.head;
+			break;
+		}
+
+		switch (poly2) {
+		case 'A':
+			temp2.head = A.head;
+			break;
+		case 'B':
+			temp2.head = B.head;
+			break;
+		case 'C':
+			temp2.head = C.head;
+			break;
+		}
+
+		int size = temp1.size() > temp2.size() ? temp2.size() : temp1.size();
+
+		for(int index = 0; index < size; index++) {
+			R.add((int)temp1.get(index) + (int)temp2.get(index));
+		}
+
+		if(temp1.size() > temp2.size()) {
+			for(int index = size; index < temp1.size(); index++)
+				R.add(temp1.get(index));
+		}
+		else {
+			for(int index = size; index < temp2.size(); index++)
+				R.add(temp2.get(index));
+		}
+
+		size = 0;
+		for(int index = 0; index < R.size(); index ++) {
+			if(R.get(index) != (Object) 0)
+				size++;
+		}
+
+		int [][] result = new int [size][2];
+		for(int index = 0, i=0; index < R.size(); index ++, i++) {
+			if(R.get(index) != (Object) 0) {
+				result[size-i-1][0] = index;
+				result[size-i-1][1] = (int)R.get(index);
+			}
+			else i--;
+		}
+		return result;
 	}
 
-	
 	public int[][] subtract(char poly1, char poly2) {
-		
-		return null;
+
+		Polynomial temp1 = new Polynomial();
+		Polynomial temp2 = new Polynomial();
+
+		switch (poly1) {
+		case 'A':
+			temp1.head = A.head;
+			break;
+		case 'B':
+			temp1.head = B.head;
+			break;
+		case 'C':
+			temp1.head = C.head;
+			break;
+		}
+
+		switch (poly2) {
+		case 'A':
+			temp2.head = A.head;
+			break;
+		case 'B':
+			temp2.head = B.head;
+			break;
+		case 'C':
+			temp2.head = C.head;
+			break;
+		}
+
+		int size = temp1.size() > temp2.size() ? temp2.size() : temp1.size();
+
+		for(int index = 0; index < size; index++) {
+			R.add((int)temp1.get(index) - (int)temp2.get(index));
+		}
+
+		if(temp1.size() > temp2.size()) {
+			for(int index = size; index < temp1.size(); index++)
+				R.add(temp1.get(index));
+		}
+		else {
+			for(int index = size; index < temp2.size(); index++)
+				R.add(-1 * (int)temp2.get(index));
+		}
+
+		size = 0;
+		for(int index = 0; index < R.size(); index ++) {
+			if(R.get(index) != (Object) 0)
+				size++;
+		}
+
+		int [][] result = new int [size][2];
+		for(int index = 0, i=0; index < R.size(); index ++, i++) {
+			if(R.get(index) != (Object) 0) {
+				result[size-i-1][0] = index;
+				result[size-i-1][1] = (int)R.get(index);
+			}
+			else i--;
+		}
+
+		if(size == 0) {
+			result = new int [1][2];
+			result[0][0] = result[0][1] = 0 ;
+		}
+
+		return result;
 	}
 
-	
 	public int[][] multiply(char poly1, char poly2) {
-		
+
 		return null;
 	}
 
@@ -211,6 +418,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 						}
 					}
 					A.setPolynomial(p,terms);
+					System.out.println(A.print('A'));
 				}
 			}
 		}
