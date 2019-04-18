@@ -60,7 +60,6 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         }
     }
 
-
     public String print(char poly) {
 
         Polynomial temp = new Polynomial();
@@ -110,8 +109,6 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 polynomial = "+" + polynomial;
             }
         }
-
-
         if(polynomial.length()>0)
             polynomial = polynomial.substring(1);
 
