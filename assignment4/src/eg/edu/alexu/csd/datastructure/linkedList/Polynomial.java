@@ -13,6 +13,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
 	
 	public String print(char poly) {
+		
 		Polynomial temp = new Polynomial();
 		switch (poly) {
 		case 'A':
@@ -39,8 +40,10 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 				polynomial = "+" + polynomial;
 			}
 		}
+		
 		if(polynomial.length()>0)
 			polynomial = polynomial.substring(1);
+		
 		return polynomial;
 	}
 
