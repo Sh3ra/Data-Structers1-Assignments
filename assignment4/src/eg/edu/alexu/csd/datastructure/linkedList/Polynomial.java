@@ -94,7 +94,6 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
 	
 	public void clearPolynomial(char poly) {
-
 		
 	}
 
@@ -224,6 +223,12 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 			}
 			else i--;
 		}
+		
+		if(size == 0) {
+			result = new int [1][2];
+			result[0][0] = result[0][1] = 0 ;
+		}
+		
 		return result;
 	}
 
@@ -334,7 +339,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 		B.add(0);
 		B.add(4);
 		B.add(9);
-		int [][] result = A.subtract('A', 'B');
+		int [][] result = A.subtract('A', 'A');
 		for(int i=0; i<result.length; i++) {
 			for(int j=0; j<2; j++)
 				System.out.print(result[i][j]+" ");
