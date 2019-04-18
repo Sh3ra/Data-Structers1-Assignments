@@ -366,9 +366,10 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     System.out.println("6- Evaluate a polynomial at some point ");
                     System.out.println("7- Clear a polynomial variable");
                     System.out.println("====================================================================");
-                    s = scan.nextInt();
-                    if (s > 7 || s < 1)
+                    String tempooo=scan.nextLine();
+                    if (!(tempooo.equals("1")||tempooo.equals("2")||tempooo.equals("3")||tempooo.equals("4")||tempooo.equals("5")||tempooo.equals("6")||tempooo.equals("7")))
                         throw new RuntimeException("invalid input");
+                    else s=Integer.parseInt(tempooo);
                 } catch (RuntimeException ex) {
                     System.out.println(ex.getMessage());
                 }
