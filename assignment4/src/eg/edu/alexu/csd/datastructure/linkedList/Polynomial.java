@@ -4,21 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
-<<<<<<< HEAD
 	
-	static Polynomial A = new Polynomial();
-	static Polynomial B = new Polynomial();
-	static Polynomial C = new Polynomial();
-	static Polynomial R = new Polynomial();
+	private static Polynomial A = new Polynomial();
+	private static Polynomial B = new Polynomial();
+	private static Polynomial C = new Polynomial();
+	private  static Polynomial R = new Polynomial();
 	
-=======
-
-	private static Polynomial A=new Polynomial();
-
-	private static Polynomial B=new Polynomial();
-	private static Polynomial C=new Polynomial();
-	private  static Polynomial R=new Polynomial();
->>>>>>> 077e254d5c0c8dce533f245b51d3c25ff262eab2
 	public void setPolynomial(char poly, int[][] terms) {
 		switch (poly)
 		{
@@ -291,7 +282,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
 	public static void main(String[] args) {
 
-		/*while (true) {
+		while (true) {
 			int s = 0;
 			Scanner scan = new Scanner(System.in);
 			do {
@@ -368,38 +359,11 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 							temp="";
 						}
 					}
-					//A.setPolynomial(p,terms);
-					for(int i=0;i<terms.length;i++)
-					{
-						for(int j=0;j<terms[i].length;j++)
-							System.out.println(terms[i][j]+" ");
-					}
-<<<<<<< HEAD
 					A.setPolynomial(p,terms);
 					System.out.println(A.print('A'));
-=======
-
->>>>>>> 077e254d5c0c8dce533f245b51d3c25ff262eab2
 				}
 			}
-		}*/
-		A.add(1);
-		A.add(0);
-		A.add(5);
-		A.add(7);
-		B.add(3);
-		B.add(0);
-		B.add(4);
-		B.add(9);
-		int [][] result = A.subtract('A', 'A');
-		for(int i=0; i<result.length; i++) {
-			for(int j=0; j<2; j++)
-				System.out.print(result[i][j]+" ");
-			System.out.println("");
 		}
-		System.out.println(A.print('A'));
-		System.out.println(A.print('B'));
-		System.out.println(A.print('R'));
 	}
 }
 
