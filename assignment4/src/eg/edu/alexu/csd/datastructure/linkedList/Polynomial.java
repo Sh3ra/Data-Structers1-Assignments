@@ -314,22 +314,27 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         if(x.length()<5)return false;
         int i=0;
         while (i<x.length()) {
+            if(x.charAt(i)!=' '){
             int counterComma = 0;
             for (; i < x.length(); i++) {
-                if (x.charAt(i) == ',' && counterComma == 1)
-                    break;
-                if (x.charAt(i) == ',' && counterComma == 0) counterComma++;
+                if (x.charAt(i) != ' ') {
+                    if (x.charAt(i) == ',' && counterComma == 1)
+                        break;
+                    if (x.charAt(i) == ',' && counterComma == 0) counterComma++;
+                }
             }
-
             if (i != x.length()) {
                 int index = i - 1, commas = 0;
                 if (x.charAt(index) == ')') index--;
                 while (x.charAt(index) != '(') {
-                    if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ','&&!(x.charAt(index)=='-'&&(x.charAt(index+1)>'0'&&x.charAt(index+1)<'9')))
-                        return false;
-                    if (x.charAt(index) == ',') commas++;
-                    if (commas > 1) return false;
-                    index--;
+                    if (x.charAt(index) != ' ') {
+                        if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ',' && !(x.charAt(index) == '-' && (x.charAt(index + 1) > '0' && x.charAt(index + 1) < '9')))
+                            return false;
+                        if (x.charAt(index) == ',') commas++;
+                        if (commas > 1) return false;
+                        index--;
+                    }
+                   else index--;
                 }
             } else {
                 i--;
@@ -337,14 +342,19 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 if (x.charAt(index) == ')') index--;
                 if (x.charAt(i) != ')') return false;
                 while (x.charAt(index) != '(') {
-                    if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ','&&!(x.charAt(index)=='-'&&(x.charAt(index+1)>'0'&&x.charAt(index+1)<'9')))
-                        return false;
-                    if (x.charAt(index) == ',') commas++;
-                    if (commas > 1) return false;
-                    index--;
-                    i++;
+                    if (x.charAt(index) != ' ') {
+                        if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ',' && !(x.charAt(index) == '-' && (x.charAt(index + 1) > '0' && x.charAt(index + 1) < '9')))
+                            return false;
+                        if (x.charAt(index) == ',') commas++;
+                        if (commas > 1) return false;
+                        index--;
+                        i++;
+                    }
+                   else index--;
                 }
             }
+        }
+            i++;
         }
         return true;
     }
@@ -389,24 +399,27 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                         }
                     } while (!p.equals("A") && !p.equals("B") && !p.equals("C"));
                     String x = new String();
-                    int temp_index=0,haha;
+                    int temp_index=0;
+                    boolean checker=false;
                     ArrayList<String>y=new ArrayList<>();
                     do {
                         try {
                             System.out.println("Insert the polynomial terms in the form: ");
                             System.out.println("(coeff1, exponent1), (coeff2, exponent2), .. ");
                             y.add(temp_index,scan.nextLine());
-                            if (!checkValidation(y.get(temp_index)))
+                            String temp=y.get(temp_index);
+                            temp=temp.replaceAll("\\s","");
+                            checker=checkValidation(temp);
+                            if (!checker)
                                 throw new RuntimeException("Invalid Input");
                         } catch (RuntimeException ex) {
                             System.out.println(ex.getMessage());
                         }
-                        haha=temp_index;
                         temp_index++;
 
-                    } while (!checkValidation(y.get(haha)));
+                    } while (!checker);
                     temp_index--;
-                    x=y.get(temp_index);
+                    x=y.get(temp_index).replaceAll("\\s","");
                     int openCounter=0;
                     for(int i=0;i<x.length();i++)
                         if(x.charAt(i)=='(')openCounter++;

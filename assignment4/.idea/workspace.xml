@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33afa98b-3f19-45a0-9013-64066152603b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList$SLNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList$SLNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/SinglyLinkedList.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="369" column="39" lean-forward="true" selection-start-line="369" selection-start-column="39" selection-end-line="369" selection-end-column="39" />
+            <state relative-caret-position="496">
+              <caret line="428" column="20" lean-forward="true" selection-start-line="428" selection-start-column="20" selection-end-line="428" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setPolynomial#0;class#Polynomial#0" />
@@ -62,7 +59,6 @@
                 <element signature="method#evaluatePolynomial#0;class#Polynomial#0" />
                 <element signature="method#add#0;class#Polynomial#0" />
                 <element signature="method#subtract#0;class#Polynomial#0" />
-                <element signature="method#checkValidation#0;class#Polynomial#0" />
               </folding>
             </state>
           </provider>
@@ -364,7 +360,21 @@
       <option name="project" value="LOCAL" />
       <updated>1555588007584</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="-ve input">
+      <created>1555594535593</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1555594535593</updated>
+    </task>
+    <task id="LOCAL-00024" summary="-ve input">
+      <created>1555595192653</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1555595192653</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -380,9 +390,9 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.36749634" side_tool="true" visible="true" weight="0.39810428" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5065886" weight="0.4265403" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.6325037" visible="true" weight="0.39810428" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.4956076" side_tool="true" visible="true" weight="0.4265403" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5043924" visible="true" weight="0.4265403" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.63103956" weight="0.39810428" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49048316" weight="0.3728278" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -453,16 +463,17 @@
     <MESSAGE value="main" />
     <MESSAGE value="setpolynomyal" />
     <MESSAGE value="validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation" />
+    <MESSAGE value="-ve input" />
+    <option name="LAST_COMMIT_MESSAGE" value="-ve input" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java</url>
-          <line>395</line>
+          <line>428</line>
           <properties />
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -554,8 +565,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="369" column="39" lean-forward="true" selection-start-line="369" selection-start-column="39" selection-end-line="369" selection-end-column="39" />
+        <state relative-caret-position="496">
+          <caret line="428" column="20" lean-forward="true" selection-start-line="428" selection-start-column="20" selection-end-line="428" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setPolynomial#0;class#Polynomial#0" />
@@ -565,7 +576,6 @@
             <element signature="method#evaluatePolynomial#0;class#Polynomial#0" />
             <element signature="method#add#0;class#Polynomial#0" />
             <element signature="method#subtract#0;class#Polynomial#0" />
-            <element signature="method#checkValidation#0;class#Polynomial#0" />
           </folding>
         </state>
       </provider>
