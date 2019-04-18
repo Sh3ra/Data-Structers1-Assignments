@@ -412,7 +412,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 if (x.charAt(i) != ')') return false;
                 while (x.charAt(index) != '(') {
                     if (x.charAt(index) != ' ') {
-                        if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ',' && !(x.charAt(index) == '-' && (x.charAt(index + 1) > '0' && x.charAt(index + 1) < '9')))
+                        if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ',' && !(x.charAt(index) == '-' && (x.charAt(index + 1) >= '0' && x.charAt(index + 1) <= '9')))
                             return false;
                         if (x.charAt(index) == ',') commas++;
                         if (commas > 1) return false;
