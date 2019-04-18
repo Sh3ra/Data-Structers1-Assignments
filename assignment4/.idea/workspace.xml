@@ -48,17 +48,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="428" column="20" lean-forward="true" selection-start-line="428" selection-start-column="20" selection-end-line="428" selection-end-column="20" />
+            <state relative-caret-position="271">
+              <caret line="482" column="22" lean-forward="true" selection-start-line="482" selection-start-column="22" selection-end-line="482" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#setPolynomial#0;class#Polynomial#0" />
-                <element signature="e#486#1496#0" />
-                <element signature="method#print#0;class#Polynomial#0" />
-                <element signature="method#clearPolynomial#0;class#Polynomial#0" />
-                <element signature="method#evaluatePolynomial#0;class#Polynomial#0" />
+                <element signature="e#628#1849#0" />
                 <element signature="method#add#0;class#Polynomial#0" />
                 <element signature="method#subtract#0;class#Polynomial#0" />
+                <element signature="method#multiply#0;class#Polynomial#0" />
+                <element signature="method#checkValidation#0;class#Polynomial#0" />
               </folding>
             </state>
           </provider>
@@ -381,7 +379,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29648608" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22995462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -390,13 +388,13 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.4956076" side_tool="true" visible="true" weight="0.4265403" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5043924" visible="true" weight="0.4265403" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5045386" side_tool="true" visible="true" weight="0.34042552" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5043924" weight="0.4265403" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.63103956" weight="0.39810428" />
-      <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49048316" weight="0.3728278" />
+      <window_info active="true" anchor="bottom" id="Messages" order="4" sideWeight="0.49048316" visible="true" weight="0.3728278" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49621785" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49546143" weight="0.34042552" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -466,18 +464,6 @@
     <MESSAGE value="-ve input" />
     <option name="LAST_COMMIT_MESSAGE" value="-ve input" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java</url>
-          <line>428</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Singlelinkedlist.java" />
     <entry file="file://$PROJECT_DIR$/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/Main.class" />
@@ -517,28 +503,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Hello.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" lean-forward="true" selection-end-line="465" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#checkValidation#0;class#Polynomial#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Hello.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-end-line="465" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#checkValidation#0;class#Polynomial#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Hello.java" />
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/IPolynomialSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -565,17 +530,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="428" column="20" lean-forward="true" selection-start-line="428" selection-start-column="20" selection-end-line="428" selection-end-column="20" />
+        <state relative-caret-position="271">
+          <caret line="482" column="22" lean-forward="true" selection-start-line="482" selection-start-column="22" selection-end-line="482" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#setPolynomial#0;class#Polynomial#0" />
-            <element signature="e#486#1496#0" />
-            <element signature="method#print#0;class#Polynomial#0" />
-            <element signature="method#clearPolynomial#0;class#Polynomial#0" />
-            <element signature="method#evaluatePolynomial#0;class#Polynomial#0" />
+            <element signature="e#628#1849#0" />
             <element signature="method#add#0;class#Polynomial#0" />
             <element signature="method#subtract#0;class#Polynomial#0" />
+            <element signature="method#multiply#0;class#Polynomial#0" />
+            <element signature="method#checkValidation#0;class#Polynomial#0" />
           </folding>
         </state>
       </provider>
