@@ -170,6 +170,14 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     temp=temp.next;
                     index++;
                 }
+                temp=A_.head;
+                 index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index*-1);
+                    temp=temp.next;
+                    index++;
+                }
             }
             break;
             case 'B':
@@ -179,6 +187,14 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 while (temp!=null)
                 {
                     result=result+((float)temp.val)*(float)java.lang.Math.pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }
+                temp=B_.head;
+                index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index*-1);
                     temp=temp.next;
                     index++;
                 }
@@ -194,6 +210,14 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     temp=temp.next;
                     index++;
                 }
+                temp=C_.head;
+                index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index*-1);
+                    temp=temp.next;
+                    index++;
+                }
             }
             break;
             case 'R':
@@ -203,6 +227,14 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 while (temp!=null)
                 {
                     result=result+((float)temp.val)*(float)java.lang.Math.pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }
+                temp=R_.head;
+                index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index*-1);
                     temp=temp.next;
                     index++;
                 }
