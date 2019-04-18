@@ -602,7 +602,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                                     temp.head=A.head;
                                     break;
                                 case 'B':
-                                    temp.head=A.head;
+                                    temp.head=B.head;
                                     break;
                                 case 'C':
                                     temp.head=C.head;

@@ -48,11 +48,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="633" column="20" selection-start-line="633" selection-start-column="20" selection-end-line="633" selection-end-column="20" />
+            <state relative-caret-position="4454">
+              <caret line="607" column="53" lean-forward="true" selection-start-line="607" selection-start-column="53" selection-end-line="607" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#628#1849#0" />
+                <element signature="method#print#0;class#Polynomial#0" />
+                <element signature="method#clearPolynomial#0;class#Polynomial#0" />
+                <element signature="method#evaluatePolynomial#0;class#Polynomial#0" />
                 <element signature="method#add#0;class#Polynomial#0" />
                 <element signature="method#subtract#0;class#Polynomial#0" />
                 <element signature="method#multiply#0;class#Polynomial#0" />
@@ -379,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555600247536</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="restart">
+      <created>1555600810120</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1555600810120</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -538,11 +548,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="633" column="20" selection-start-line="633" selection-start-column="20" selection-end-line="633" selection-end-column="20" />
+        <state relative-caret-position="4454">
+          <caret line="607" column="53" lean-forward="true" selection-start-line="607" selection-start-column="53" selection-end-line="607" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#628#1849#0" />
+            <element signature="method#print#0;class#Polynomial#0" />
+            <element signature="method#clearPolynomial#0;class#Polynomial#0" />
+            <element signature="method#evaluatePolynomial#0;class#Polynomial#0" />
             <element signature="method#add#0;class#Polynomial#0" />
             <element signature="method#subtract#0;class#Polynomial#0" />
             <element signature="method#multiply#0;class#Polynomial#0" />
