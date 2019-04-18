@@ -9,6 +9,10 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 	private static Polynomial B = new Polynomial();
 	private static Polynomial C = new Polynomial();
 	private  static Polynomial R = new Polynomial();
+	private static Polynomial A_ = new Polynomial();
+	private static Polynomial B_ = new Polynomial();
+	private static Polynomial C_= new Polynomial();
+	private  static Polynomial R_ = new Polynomial();
 	
 	public void setPolynomial(char poly, int[][] terms) {
 		switch (poly)
@@ -52,23 +56,28 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 		}
 
 	}
-
 	
 	public String print(char poly) {
 		
 		Polynomial temp = new Polynomial();
+		Polynomial temp_ = new Polynomial();
+
 		switch (poly) {
 		case 'A':
 			temp.head = A.head;
+			temp_.head = A_.head;
 			break;
 		case 'B':
 			temp.head = B.head;
+			temp_.head = B_.head;
 			break;
 		case 'C':
 			temp.head = C.head;
+			temp_.head = C_.head;
 			break;
 		case 'R':
 			temp.head = R.head;
+			temp_.head = R_.head;
 			break;
 		}
 		
@@ -85,6 +94,19 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 				polynomial = "+" + polynomial;
 			}
 		}
+
+		for(int index = 0; index < temp_.size(); index++) {
+			if(temp_.get(index) != (Object)0) {
+				if (index == 0)
+					polynomial += temp_.get(index);
+				else if (index == 1)
+					polynomial += (temp_.get(index)==(Object)1?"":temp_.get(index)) + "x";
+				else 
+					polynomial += (temp_.get(index)==(Object)1?"":temp_.get(index)) + "x^" + -1*index;
+				polynomial = "+" + polynomial;
+			}
+		}
+		
 		
 		if(polynomial.length()>0)
 			polynomial = polynomial.substring(1);
@@ -94,7 +116,6 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 		
 		return polynomial;
 	}
-
 	
 	public void clearPolynomial(char poly) {
 		switch (poly)
@@ -169,7 +190,6 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         }        
 		return result;
 	}
-
 	
 	public int[][] add(char poly1, char poly2) {
 		
@@ -299,7 +319,6 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 		return result;
 	}
 
-	
 	public int[][] multiply(char poly1, char poly2) {
 		
 		return null;
@@ -514,7 +533,8 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 					System.out.print("Result set in R: ("+result[0][0]+","+result[0][1] +")");
 					for(int i=1; i<result.length; i++) {
 						System.out.print(", ("+result[i][0]+","+result[i][1]+")");
-					}						
+					}	
+					System.out.println("");
 				}
 				case 4: {
 					Polynomial temp = new Polynomial();
@@ -586,6 +606,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 					for(int i=1; i<result.length; i++) {
 						System.out.print(", ("+result[i][0]+","+result[i][1]+")");
 					}
+					System.out.println("");
 				}
 						
 				case 5: {
