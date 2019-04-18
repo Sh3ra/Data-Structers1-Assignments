@@ -67,6 +67,9 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 		case 'C':
 			temp.head = C.head;
 			break;
+		case 'R':
+			temp.head = R.head;
+			break;
 		}
 		
 		String polynomial = new String();
@@ -76,9 +79,9 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 				if (index == 0)
 					polynomial = temp.get(index) + polynomial;
 				else if (index == 1)
-					polynomial = "X" + polynomial;
+					polynomial = (temp.get(index)==(Object)1?"":temp.get(index)) + "x" + polynomial;
 				else 
-					polynomial = temp.get(index) + "X^" + index + polynomial;
+					polynomial = (temp.get(index)==(Object)1?"":temp.get(index)) + "x^" + index + polynomial;
 				polynomial = "+" + polynomial;
 			}
 		}
@@ -104,13 +107,124 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 	
 	public int[][] add(char poly1, char poly2) {
 		
-		return null;
+		Polynomial temp1 = new Polynomial();
+		Polynomial temp2 = new Polynomial();
+		
+		switch (poly1) {
+		case 'A':
+			temp1.head = A.head;
+			break;
+		case 'B':
+			temp1.head = B.head;
+			break;
+		case 'C':
+			temp1.head = C.head;
+			break;
+		}
+		
+		switch (poly2) {
+		case 'A':
+			temp2.head = A.head;
+			break;
+		case 'B':
+			temp2.head = B.head;
+			break;
+		case 'C':
+			temp2.head = C.head;
+			break;
+		}
+		
+		int size = temp1.size() > temp2.size() ? temp2.size() : temp1.size();
+		
+		for(int index = 0; index < size; index++) {
+			R.add((int)temp1.get(index) + (int)temp2.get(index));
+		}
+		
+		if(temp1.size() > temp2.size()) {
+			for(int index = size; index < temp1.size(); index++)
+				R.add(temp1.get(index));
+		}
+		else {
+			for(int index = size; index < temp2.size(); index++)
+				R.add(temp2.get(index));
+		}
+		
+		size = 0;
+		for(int index = 0; index < R.size(); index ++) {
+			if(R.get(index) != (Object) 0)
+				size++;
+		}
+		
+		int [][] result = new int [size][2];
+		for(int index = 0, i=0; index < R.size(); index ++, i++) {
+			if(R.get(index) != (Object) 0) {
+				result[i][0] = index;
+				result[i][1] = (int)R.get(index);
+			}
+			else i--;
+		}
+		return result;
 	}
 
-	
 	public int[][] subtract(char poly1, char poly2) {
 		
-		return null;
+		Polynomial temp1 = new Polynomial();
+		Polynomial temp2 = new Polynomial();
+		
+		switch (poly1) {
+		case 'A':
+			temp1.head = A.head;
+			break;
+		case 'B':
+			temp1.head = B.head;
+			break;
+		case 'C':
+			temp1.head = C.head;
+			break;
+		}
+		
+		switch (poly2) {
+		case 'A':
+			temp2.head = A.head;
+			break;
+		case 'B':
+			temp2.head = B.head;
+			break;
+		case 'C':
+			temp2.head = C.head;
+			break;
+		}
+		
+		int size = temp1.size() > temp2.size() ? temp2.size() : temp1.size();
+		
+		for(int index = 0; index < size; index++) {
+			R.add((int)temp1.get(index) - (int)temp2.get(index));
+		}
+		
+		if(temp1.size() > temp2.size()) {
+			for(int index = size; index < temp1.size(); index++)
+				R.add(temp1.get(index));
+		}
+		else {
+			for(int index = size; index < temp2.size(); index++)
+				R.add(-1 * (int)temp2.get(index));
+		}
+		
+		size = 0;
+		for(int index = 0; index < R.size(); index ++) {
+			if(R.get(index) != (Object) 0)
+				size++;
+		}
+		
+		int [][] result = new int [size][2];
+		for(int index = 0, i=0; index < R.size(); index ++, i++) {
+			if(R.get(index) != (Object) 0) {
+				result[i][0] = index;
+				result[i][1] = (int)R.get(index);
+			}
+			else i--;
+		}
+		return result;
 	}
 
 	
@@ -143,7 +257,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
 	public static void main(String[] args) {
 
-		while (true) {
+		/*while (true) {
 			int s = 0;
 			Scanner scan = new Scanner(System.in);
 			do {
@@ -211,7 +325,24 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 					System.out.println(A.print('A'));
 				}
 			}
+		}*/
+		A.add(1);
+		A.add(0);
+		A.add(5);
+		A.add(7);
+		B.add(3);
+		B.add(0);
+		B.add(4);
+		B.add(9);
+		int [][] result = A.subtract('A', 'B');
+		for(int i=0; i<result.length; i++) {
+			for(int j=0; j<2; j++)
+				System.out.print(result[i][j]+" ");
+			System.out.println("");
 		}
+		System.out.println(A.print('A'));
+		System.out.println(A.print('B'));
+		System.out.println(A.print('R'));
 	}
 }
 
