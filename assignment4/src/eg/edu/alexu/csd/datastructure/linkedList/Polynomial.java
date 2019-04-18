@@ -378,12 +378,12 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 						try {
 							System.out.println("Insert the variable name: A, B or C");
 							p = scan.next().toUpperCase();
-							if (!p.equals("A") && !p.equals("B") && !p.equals("C") && p.length() != 1)
+							if (!p.equals("A") && !p.equals("B") && !p.equals("C") || p.length() != 1)
 								throw new RuntimeException("invalid variable");
 						} catch (RuntimeException ex) {
 							System.out.println(ex.getMessage());
 						}
-					} while (!p.equals("A") && !p.equals("B") && !p.equals("C"));
+					} while (!p.equals("A") && !p.equals("B") && !p.equals("C") || p.length() != 1);
 					String x = new String();
 					int temp_index=0,haha;
 					ArrayList<String>y=new ArrayList<>();
@@ -428,35 +428,177 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 					}
 					A.setPolynomial(p.charAt(0),terms);
 					System.out.println("Polynomial " + p.charAt(0) + " is set");
-				}
-				break;
+					break;
+				}	
+				
 				case 2: {
-					System.out.println("Insert the variable name: A, B, C or R");
-					p = scan.next().toUpperCase();
-					switch (p.charAt(0)) {
-					case 'A':
-						System.out.println("Value in "+ p.charAt(0) + ": " + A.print('A'));
-						break;
-					case 'B':
-						System.out.println("Value in "+ p.charAt(0) + ": " + A.print('B'));
-						break;
-					case 'C':
-						System.out.println("Value in "+ p.charAt(0) + ": " + A.print('C'));
-						break;
-					case 'R':
-						System.out.println("Value in "+ p.charAt(0) + ": " + A.print('R'));
-						break;
+					do {
+						try {
+							System.out.println("Insert the variable name: A, B, C or R");
+							p = scan.next().toUpperCase();
+							if (!p.equals("A") && !p.equals("B") && !p.equals("C") && !p.equals("R") || p.length() != 1)
+								throw new RuntimeException("Invalid Variable");
+						} catch (RuntimeException ex) {
+							System.out.println(ex.getMessage());
+						}
+					} while (!p.equals("A") && !p.equals("B") && !p.equals("C") && !p.equals("R") || p.length() != 1);
+					System.out.println("Value in "+ p.charAt(0) + ": " + A.print(p.charAt(0)));
+					break;
+				}				
+				case 3: {
+					Polynomial temp = new Polynomial();
+					do {
+						try {
+						do {
+							try {
+								System.out.println("Insert first operand variable name: A, B or C");							
+								p = scan.next().toUpperCase();
+								if (!p.equals("A") && !p.equals("B") && !p.equals("C") || p.length() != 1)
+									throw new RuntimeException("Invalid Variable");
+							} catch (RuntimeException ex) {
+								System.out.println(ex.getMessage());
+							}
+						} while (!p.equals("A") && !p.equals("B") && !p.equals("C") || p.length() != 1);
+							switch (p.charAt(0)) {
+							case 'A':
+								temp.head=A.head;
+								break;
+							case 'B':
+								temp.head=B.head;
+								break;
+							case 'C':
+								temp.head=C.head;
+								break;
+							}
+							if(temp.isEmpty())
+								throw new RuntimeException("Variable not set");
+						}
+						catch (RuntimeException ex)
+						{
+							System.out.println(ex.getMessage());
+						}
+					} while (temp.isEmpty());
+					String p_ = new String();
+					do {
+						try {
+						do {
+							try {
+								System.out.println("Insert second operand variable name: A, B or C");							
+								p_ = scan.next().toUpperCase();
+								if (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1)
+									throw new RuntimeException("Invalid Variable");
+							} catch (RuntimeException ex) {
+								System.out.println(ex.getMessage());
+							}
+						} while (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1);
+							switch (p_.charAt(0)) {
+							case 'A':
+								temp.head=A.head;
+								break;
+							case 'B':
+								temp.head=A.head;
+								break;
+							case 'C':
+								temp.head=C.head;
+								break;
+							}
+							if(temp.isEmpty())
+								throw new RuntimeException("Variable not set");
+						}
+						catch (RuntimeException ex)
+						{
+							System.out.println(ex.getMessage());
+						}
+					} while (temp.isEmpty());
+					int [][] result = A.add(p.charAt(0), p_.charAt(0));
+					System.out.print("Result set in R: ("+result[0][0]+","+result[0][1] +")");
+					for(int i=1; i<result.length; i++) {
+						System.out.print(", ("+result[i][0]+","+result[i][1]+")");
+					}						
+				}
+				case 4: {
+					Polynomial temp = new Polynomial();
+					do {
+						try {
+						do {
+							try {
+								System.out.println("Insert first operand variable name: A, B or C");							
+								p = scan.next().toUpperCase();
+								if (!p.equals("A") && !p.equals("B") && !p.equals("C") || p.length() != 1)
+									throw new RuntimeException("Invalid Variable");
+							} catch (RuntimeException ex) {
+								System.out.println(ex.getMessage());
+							}
+						} while (!p.equals("A") && !p.equals("B") && !p.equals("C") || p.length() != 1);
+							switch (p.charAt(0)) {
+							case 'A':
+								temp.head=A.head;
+								break;
+							case 'B':
+								temp.head=B.head;
+								break;
+							case 'C':
+								temp.head=C.head;
+								break;
+							}
+							if(temp.isEmpty())
+								throw new RuntimeException("Variable not set");
+						}
+						catch (RuntimeException ex)
+						{
+							System.out.println(ex.getMessage());
+						}
+					} while (temp.isEmpty());
+					String p_ = new String();
+					do {
+						try {
+						do {
+							try {
+								System.out.println("Insert second operand variable name: A, B or C");							
+								p_ = scan.next().toUpperCase();
+								if (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1)
+									throw new RuntimeException("Invalid Variable");
+							} catch (RuntimeException ex) {
+								System.out.println(ex.getMessage());
+							}
+						} while (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1);
+							switch (p_.charAt(0)) {
+							case 'A':
+								temp.head=A.head;
+								break;
+							case 'B':
+								temp.head=A.head;
+								break;
+							case 'C':
+								temp.head=C.head;
+								break;
+							}
+							if(temp.isEmpty())
+								throw new RuntimeException("Variable not set");
+						}
+						catch (RuntimeException ex)
+						{
+							System.out.println(ex.getMessage());
+						}
+					} while (temp.isEmpty());
+					int [][] result = A.subtract(p.charAt(0), p_.charAt(0));
+					System.out.print("Result set in R: ("+result[0][0]+","+result[0][1] +")");
+					for(int i=1; i<result.length; i++) {
+						System.out.print(", ("+result[i][0]+","+result[i][1]+")");
 					}
 				}
-					case 3:
 						
-					case 4:
+				case 5: {
+					
+				}
 						
-					case 5:
+				case 6: {
+					
+				}
 						
-					case 6:
-						
-					case 7:
+				case 7: {
+					
+				}
 
 				}				
 			}
