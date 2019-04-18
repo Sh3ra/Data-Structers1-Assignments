@@ -89,18 +89,85 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 		if(polynomial.length()>0)
 			polynomial = polynomial.substring(1);
 		
+		if(polynomial.length() == 0)
+			polynomial += 0;
+		
 		return polynomial;
 	}
 
 	
 	public void clearPolynomial(char poly) {
-		
+		switch (poly)
+        {
+            case 'A':
+            	A.clear();
+            	break;
+            case 'B':
+            	B.clear();
+            	break;
+            case 'C':
+            	C.clear();
+            	break;
+            case 'R':
+            	R.clear();
+            	break;            
+        }
 	}
 
-	
 	public float evaluatePolynomial(char poly, float value) {
-
-		return 0;
+        float result=0;
+        switch (poly)
+        {
+            case 'A':
+            {
+                SLNode temp=A.head;
+                int index=0;
+                while (temp!=null)
+                { 
+                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }                
+            }
+                break;
+            case 'B':
+            {
+                SLNode temp=B.head;
+                int index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float)java.lang.Math.pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }
+            }
+                break;
+            case 'C':
+            {
+                SLNode temp=C.head;
+                int index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float)java.lang.Math.pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }
+            }
+                break;
+            case 'R':
+            {
+                SLNode temp=R.head;
+                int index=0;
+                while (temp!=null)
+                {
+                    result=result+((float)temp.val)*(float)java.lang.Math.pow(value,index);
+                    temp=temp.next;
+                    index++;
+                }
+            }
+                break;
+        }        
+		return result;
 	}
 
 	
@@ -304,19 +371,19 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 					System.out.println(ex.getMessage());
 				}
 			} while (s < 1 || s > 7);
+			String p = new String();
 			switch (s) {
 				case 1: {
-					char p = 0;
 					do {
 						try {
 							System.out.println("Insert the variable name: A, B or C");
-							p = scan.next().charAt(0);
-							if (p != 'A' && p != 'B' && p != 'C')
+							p = scan.next().toUpperCase();
+							if (!p.equals("A") && !p.equals("B") && !p.equals("C") && p.length() != 1)
 								throw new RuntimeException("invalid variable");
 						} catch (RuntimeException ex) {
 							System.out.println(ex.getMessage());
 						}
-					} while (p != 'A' && p != 'B' && p != 'C');
+					} while (!p.equals("A") && !p.equals("B") && !p.equals("C"));
 					String x = new String();
 					int temp_index=0,haha;
 					ArrayList<String>y=new ArrayList<>();
@@ -359,11 +426,40 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 							temp="";
 						}
 					}
-					A.setPolynomial(p,terms);
-					System.out.println(A.print('A'));
+					A.setPolynomial(p.charAt(0),terms);
+					System.out.println("Polynomial " + p.charAt(0) + " is set");
 				}
+				break;
+				case 2: {
+					System.out.println("Insert the variable name: A, B, C or R");
+					p = scan.next().toUpperCase();
+					switch (p.charAt(0)) {
+					case 'A':
+						System.out.println("Value in "+ p.charAt(0) + ": " + A.print('A'));
+						break;
+					case 'B':
+						System.out.println("Value in "+ p.charAt(0) + ": " + A.print('B'));
+						break;
+					case 'C':
+						System.out.println("Value in "+ p.charAt(0) + ": " + A.print('C'));
+						break;
+					case 'R':
+						System.out.println("Value in "+ p.charAt(0) + ": " + A.print('R'));
+						break;
+					}
+				}
+					case 3:
+						
+					case 4:
+						
+					case 5:
+						
+					case 6:
+						
+					case 7:
+
+				}				
 			}
 		}
 	}
-}
 
