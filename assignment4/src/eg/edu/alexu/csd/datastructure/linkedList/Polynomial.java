@@ -208,7 +208,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 						}
 					}
 					A.setPolynomial(p,terms);
-
+					System.out.println(A.print('A'));
 				}
 			}
 		}
