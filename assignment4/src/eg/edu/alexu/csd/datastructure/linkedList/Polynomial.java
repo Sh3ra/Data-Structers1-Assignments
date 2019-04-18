@@ -1,15 +1,24 @@
 package eg.edu.alexu.csd.datastructure.linkedList;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.*;
 
 public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
+<<<<<<< HEAD
 	
 	static Polynomial A = new Polynomial();
 	static Polynomial B = new Polynomial();
 	static Polynomial C = new Polynomial();
 	static Polynomial R = new Polynomial();
 	
+=======
+
+	private static Polynomial A=new Polynomial();
+
+	private static Polynomial B=new Polynomial();
+	private static Polynomial C=new Polynomial();
+	private  static Polynomial R=new Polynomial();
+>>>>>>> 077e254d5c0c8dce533f245b51d3c25ff262eab2
 	public void setPolynomial(char poly, int[][] terms) {
 		switch (poly)
 		{
@@ -240,24 +249,44 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
 	private static boolean checkValidation(String x)
 	{
-		Pattern p=Pattern.compile("\\(");
-		Matcher m=p.matcher(x);
-		while (m.find())
-		{
-			int i=m.start()+1;
-			int commaCounter=0;
-			while (i<x.length())
+		if(x.charAt(0)!='(')return false;
+		if(x.length()<5)return false;
+		int i=0;
+		while (i<x.length()){
+			int counterComma=0;
+			for(;i<x.length();i++)
 			{
-				if(x.charAt(i)==41)
+				if(x.charAt(i)==','&&counterComma==1)
 					break;
-				if(x.charAt(i)==44)
-					commaCounter++;
-				else if(x.charAt(i)<48||x.charAt(i)>57)return false;
-				i++;
+				if(x.charAt(i)==','&&counterComma==0)counterComma++;
 			}
-			if(commaCounter!=1)return false;
 		}
-		return true;
+		if(i!=x.length())
+		{
+			int index=i-1,commas=0;
+			if(x.charAt(index)==')')index--;
+			while (x.charAt(index)!='(')
+			{
+				if(x.charAt(index)<'0'&&x.charAt(index)>'9'&&x.charAt(index)!=',')return false;
+				if(x.charAt(index)==',')commas++;
+				if(commas>1)return false;
+				index--;
+			}
+		}
+		else {
+			i--;
+			int index=i,commas=0;
+			if(x.charAt(index)==')')index--;
+			if(x.charAt(i)!=')')return false;
+			while (x.charAt(index)!='(')
+			{
+				if((x.charAt(index)<'0'||x.charAt(index)>'9')&&x.charAt(index)!=',')return false;
+				if(x.charAt(index)==',')commas++;
+				if(commas>1)return false;
+				index--;
+			}
+		}
+				return true;
 	}
 
 	public static void main(String[] args) {
@@ -297,37 +326,60 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 							System.out.println(ex.getMessage());
 						}
 					} while (p != 'A' && p != 'B' && p != 'C');
-					String x = "a";
+					String x = new String();
+					int temp_index=0,haha;
+					ArrayList<String>y=new ArrayList<>();
 					do {
 						try {
 							System.out.println("Insert the polynomial terms in the form: ");
 							System.out.println("(coeff1, exponent1), (coeff2, exponent2), .. ");
-							x = scan.nextLine();
-							if (!checkValidation(x))
+							 y.add(temp_index,scan.next());
+							if (!checkValidation(y.get(temp_index)))
 								throw new RuntimeException("Invalid Input");
 						} catch (RuntimeException ex) {
 							System.out.println(ex.getMessage());
 						}
-					} while (!checkValidation(x));
+						haha=temp_index;
+						temp_index++;
+
+					} while (!checkValidation(y.get(haha)));
+					temp_index--;
+					x=y.get(temp_index);
 					int openCounter=0;
 					for(int i=0;i<x.length();i++)
 						if(x.charAt(i)=='(')openCounter++;
 					int  terms[][]=new int [openCounter][2];
-
+					int index=0;
+					String temp = new String();
 					for(int i=0;i<x.length();i++)
 					{
-						String temp="0";
 						if(x.charAt(i)!='('&&x.charAt(i)!=')'&&x.charAt(i)!=',')
 						{
-							temp+=x.charAt(i);
+							temp=temp+x.charAt(i);
 						}
-						if(x.charAt(i)==','&&x.charAt(i+1)!=')')
+						if(x.charAt(i)==','&&x.charAt(i+1)!=')'&&x.charAt(i+1)!='(')
 						{
-							terms[i][0]=Integer.parseInt(temp);
+							terms[index][0]=Integer.parseInt(temp);
+							temp="";
+						}
+						else if(x.charAt(i)==')') {
+							terms[index][1] = Integer.parseInt(temp);
+							index++;
+							temp="";
 						}
 					}
+					//A.setPolynomial(p,terms);
+					for(int i=0;i<terms.length;i++)
+					{
+						for(int j=0;j<terms[i].length;j++)
+							System.out.println(terms[i][j]+" ");
+					}
+<<<<<<< HEAD
 					A.setPolynomial(p,terms);
 					System.out.println(A.print('A'));
+=======
+
+>>>>>>> 077e254d5c0c8dce533f245b51d3c25ff262eab2
 				}
 			}
 		}*/
