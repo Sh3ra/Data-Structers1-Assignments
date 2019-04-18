@@ -21,39 +21,55 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
             case 'A':
             {
                 A.clearPolynomial('A');
-                for(int i=0;i<terms.length;i++)
-                {
-                    while (A.size()<=terms[i][1])
-                    {
-                        A.add(0);
+                for(int i=0;i<terms.length;i++) {
+                    if (terms[i][1] >= 0) {
+                        while (A.size() <= terms[i][1]) {
+                            A.add(0);
+                        }
+                        A.set(terms[i][1], terms[i][0]);
                     }
-                    A.set(terms[i][1],terms[i][0]);
+                    else
+                    {
+                        while (A_.size() <=  java.lang.Math.abs(terms[i][1])) {
+                            A_.add(0);
+                        }
+                        A_.set( java.lang.Math.abs(terms[i][1]), terms[i][0]);
+                    }
                 }
             }
             break;
-            case 'B':
-            {
+            case 'B': {
                 A.clearPolynomial('B');
-                for(int i=0;i<terms.length;i++)
-                {
-                    while (B.size()<=terms[i][1])
-                    {
-                        B.add(0);
+                for (int i = 0; i < terms.length; i++) {
+                    if (terms[i][1] >= 0) {
+                        while (B.size() <= terms[i][1]) {
+                            B.add(0);
+                        }
+                        B.set(terms[i][1], terms[i][0]);
+                    } else {
+                        while (B_.size() <= java.lang.Math.abs(terms[i][1])) {
+                            B_.add(0);
+                        }
+                        B_.set(java.lang.Math.abs(terms[i][1]), terms[i][0]);
                     }
-                    B.set(terms[i][1],terms[i][0]);
                 }
             }
             break;
             case 'C':
-            {
+             {
                 A.clearPolynomial('C');
-                for(int i=0;i<terms.length;i++)
-                {
-                    while (C.size()<=terms[i][1])
-                    {
-                        C.add(0);
+                for (int i = 0; i < terms.length; i++) {
+                    if (terms[i][1] >= 0) {
+                        while (C.size() <= terms[i][1]) {
+                            C.add(0);
+                        }
+                        C.set(terms[i][1], terms[i][0]);
+                    } else {
+                        while (C_.size() <= java.lang.Math.abs(terms[i][1])) {
+                            C_.add(0);
+                        }
+                        C_.set(java.lang.Math.abs(terms[i][1]), terms[i][0]);
                     }
-                    C.set(terms[i][1],terms[i][0]);
                 }
             }
             break;
@@ -106,7 +122,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     polynomial += (temp_.get(index)==(Object)1?"":temp_.get(index)) + "x";
                 else
                     polynomial += (temp_.get(index)==(Object)1?"":temp_.get(index)) + "x^" + -1*index;
-                polynomial = "+" + polynomial;
+                polynomial += "+" ;
             }
         }
         if(polynomial.length()>0)
@@ -123,15 +139,19 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         {
             case 'A':
                 A.clear();
+                A_.clear();
                 break;
             case 'B':
                 B.clear();
+                B_.clear();
                 break;
             case 'C':
                 C.clear();
+                C_.clear();
                 break;
             case 'R':
                 R.clear();
+                R_.clear();
                 break;
         }
     }
