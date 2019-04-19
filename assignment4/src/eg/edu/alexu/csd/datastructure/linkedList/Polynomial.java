@@ -110,23 +110,29 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     polynomial = (temp.get(index)==(Object)1?"":temp.get(index)) + "x" + polynomial;
                 else
                     polynomial = (temp.get(index)==(Object)1?"":temp.get(index)) + "x^" + index + polynomial;
-                polynomial = "+" + polynomial;
+                polynomial = " + " + polynomial;
             }
+        }
+        if(polynomial.length()>0)
+            polynomial = polynomial.substring(2);
+
+        if(temp_.size()>0 && temp.size()>0) {
+            polynomial += " + ";
         }
 
         for(int index = 0; index < temp_.size(); index++) {
             if(temp_.get(index) != (Object)0) {
                 if (index == 0)
                     polynomial += temp_.get(index);
-                else if (index == 1)
-                    polynomial += (temp_.get(index)==(Object)1?"":temp_.get(index)) + "x";
                 else
-                    polynomial += (temp_.get(index)==(Object)1?"":temp_.get(index)) + "x^" + -1*index;
-                polynomial += "+" ;
+                    polynomial += (temp_.get(index)==(Object)(-1)?"-":temp_.get(index)) + "x^" + -1*index;
+                polynomial += " + ";
             }
         }
-        if(polynomial.length()>0)
-            polynomial = polynomial.substring(1);
+
+        if(temp_.size()>0) {
+            polynomial = polynomial.substring(0, polynomial.length()-2);
+        }
 
         if(polynomial.length() == 0)
             polynomial += 0;
@@ -166,7 +172,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 int index=0;
                 while (temp!=null)
                 {
-                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index);
+                    result = result + (((float) temp.val) * (float) Math.pow(value, index));
                     temp=temp.next;
                     index++;
                 }
@@ -246,6 +252,9 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
     public int[][] add(char poly1, char poly2) {
 
+        R.clear();
+        R_.clear();
+
         Polynomial temp1 = new Polynomial();
         Polynomial temp2 = new Polynomial();
 
@@ -288,24 +297,81 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 R.add(temp2.get(index));
         }
 
+        Polynomial temp1_ = new Polynomial();
+        Polynomial temp2_ = new Polynomial();
+
+        switch (poly1) {
+            case 'A':
+                temp1_.head = A_.head;
+                break;
+            case 'B':
+                temp1_.head = B_.head;
+                break;
+            case 'C':
+                temp1_.head = C_.head;
+                break;
+        }
+
+        switch (poly2) {
+            case 'A':
+                temp2_.head = A_.head;
+                break;
+            case 'B':
+                temp2_.head = B_.head;
+                break;
+            case 'C':
+                temp2_.head = C_.head;
+                break;
+        }
+
+        int size_ = temp1_.size() > temp2_.size() ? temp2_.size() : temp1_.size();
+
+        for(int index = 0; index < size_; index++) {
+            R_.add((int)temp1_.get(index) + (int)temp2_.get(index));
+        }
+
+        if(temp1_.size() > temp2_.size()) {
+            for(int index = size_; index < temp1_.size(); index++)
+                R_.add(temp1_.get(index));
+        }
+        else {
+            for(int index = size_; index < temp2_.size(); index++)
+                R_.add(temp2_.get(index));
+        }
+
         size = 0;
         for(int index = 0; index < R.size(); index ++) {
             if(R.get(index) != (Object) 0)
                 size++;
         }
 
-        int [][] result = new int [size][2];
+        size_ = 0;
+        for(int index = 0; index < R_.size(); index ++) {
+            if(R_.get(index) != (Object) 0)
+                size_++;
+        }
+
+        int [][] result = new int [size+size_][2];
         for(int index = 0, i=0; index < R.size(); index ++, i++) {
             if(R.get(index) != (Object) 0) {
-                result[size-i-1][0] = index;
-                result[size-i-1][1] = (int)R.get(index);
+                result[size-i-1][1] = index;
+                result[size-i-1][0] = (int)R.get(index);
+            }
+            else i--;
+        }
+        for(int index = 0, i=size; index < R_.size(); index ++, i++) {
+            if(R_.get(index) != (Object) 0) {
+                result[i][1] = -1*index;
+                result[i][0] = (int)R_.get(index);
             }
             else i--;
         }
         return result;
     }
-
     public int[][] subtract(char poly1, char poly2) {
+
+        R.clear();
+        R_.clear();
 
         Polynomial temp1 = new Polynomial();
         Polynomial temp2 = new Polynomial();
@@ -346,7 +412,49 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         }
         else {
             for(int index = size; index < temp2.size(); index++)
-                R.add(-1 * (int)temp2.get(index));
+                R.add(temp2.get(index));
+        }
+
+        Polynomial temp1_ = new Polynomial();
+        Polynomial temp2_ = new Polynomial();
+
+        switch (poly1) {
+            case 'A':
+                temp1_.head = A_.head;
+                break;
+            case 'B':
+                temp1_.head = B_.head;
+                break;
+            case 'C':
+                temp1_.head = C_.head;
+                break;
+        }
+
+        switch (poly2) {
+            case 'A':
+                temp2_.head = A_.head;
+                break;
+            case 'B':
+                temp2_.head = B_.head;
+                break;
+            case 'C':
+                temp2_.head = C_.head;
+                break;
+        }
+
+        int size_ = temp1_.size() > temp2_.size() ? temp2_.size() : temp1_.size();
+
+        for(int index = 0; index < size_; index++) {
+            R_.add((int)temp1_.get(index) - (int)temp2_.get(index));
+        }
+
+        if(temp1_.size() > temp2_.size()) {
+            for(int index = size_; index < temp1_.size(); index++)
+                R_.add(temp1_.get(index));
+        }
+        else {
+            for(int index = size_; index < temp2_.size(); index++)
+                R_.add(-1*(int)temp2_.get(index));
         }
 
         size = 0;
@@ -355,23 +463,29 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 size++;
         }
 
-        int [][] result = new int [size][2];
+        size_ = 0;
+        for(int index = 0; index < R_.size(); index ++) {
+            if(R_.get(index) != (Object) 0)
+                size_++;
+        }
+
+        int [][] result = new int [size+size_][2];
         for(int index = 0, i=0; index < R.size(); index ++, i++) {
             if(R.get(index) != (Object) 0) {
-                result[size-i-1][0] = index;
-                result[size-i-1][1] = (int)R.get(index);
+                result[size-i-1][1] = index;
+                result[size-i-1][0] = (int)R.get(index);
             }
             else i--;
         }
-
-        if(size == 0) {
-            result = new int [1][2];
-            result[0][0] = result[0][1] = 0 ;
+        for(int index = 0, i=size; index < R_.size(); index ++, i++) {
+            if(R_.get(index) != (Object) 0) {
+                result[i][1] = -1*index;
+                result[i][0] = (int)R_.get(index);
+            }
+            else i--;
         }
-
         return result;
     }
-
     public int[][] multiply(char poly1, char poly2) {
 
         return null;
@@ -517,21 +631,48 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 }
                 break;
                 case 2: {
-                    do {
+                    Polynomial temp = new Polynomial();
+                    Polynomial temp_ = new Polynomial();
+                    do{
                         try {
-                            System.out.println("Insert the variable name: A, B, C or R");
-                            p = scan.next().toUpperCase();
-                            if (!p.equals("A") && !p.equals("B") && !p.equals("C") && !p.equals("R") || p.length() != 1)
-                                throw new RuntimeException("Invalid Variable");
-                        } catch (RuntimeException ex) {
+                            do {
+                                try {
+                                    System.out.println("Insert the variable name: A, B, C or R");
+                                    p = scan.next().toUpperCase();
+                                    if (!p.equals("A") && !p.equals("B") && !p.equals("C") && !p.equals("R") || p.length() != 1)
+                                        throw new RuntimeException("Invalid Variable");
+                                } catch (RuntimeException ex) {
+                                    System.out.println(ex.getMessage());
+                                }
+                            } while (!p.equals("A") && !p.equals("B") && !p.equals("C") && !p.equals("R") || p.length() != 1);
+                            switch (p.charAt(0)) {
+                                case 'A':
+                                    temp.head=A.head;
+                                    temp_.head=A_.head;
+                                    break;
+                                case 'B':
+                                    temp.head=B.head;
+                                    temp_.head=B_.head;
+                                    break;
+                                case 'C':
+                                    temp.head=C.head;
+                                    temp_.head=C_.head;
+                                    break;
+                            }
+                            if(temp.isEmpty()&&temp_.isEmpty())
+                                throw new RuntimeException("Variable not set");
+                        }
+                        catch (RuntimeException ex)
+                        {
                             System.out.println(ex.getMessage());
                         }
-                    } while (!p.equals("A") && !p.equals("B") && !p.equals("C") && !p.equals("R") || p.length() != 1);
+                    } while (temp.isEmpty()&&temp_.isEmpty());
                     System.out.println("Value in "+ p.charAt(0) + ": " + A.print(p.charAt(0)));
                 }
                 break;
                 case 3: {
                     Polynomial temp = new Polynomial();
+                    Polynomial temp_ = new Polynomial();
                     do {
                         try {
                             do {
@@ -547,22 +688,25 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                             switch (p.charAt(0)) {
                                 case 'A':
                                     temp.head=A.head;
+                                    temp_.head=A_.head;
                                     break;
                                 case 'B':
                                     temp.head=B.head;
+                                    temp_.head=B_.head;
                                     break;
                                 case 'C':
                                     temp.head=C.head;
+                                    temp_.head=C_.head;
                                     break;
                             }
-                            if(temp.isEmpty())
+                            if(temp.isEmpty()&&temp_.isEmpty())
                                 throw new RuntimeException("Variable not set");
                         }
                         catch (RuntimeException ex)
                         {
                             System.out.println(ex.getMessage());
                         }
-                    } while (temp.isEmpty());
+                    } while (temp.isEmpty()&&temp_.isEmpty());
                     String p_ = new String();
                     do {
                         try {
@@ -579,22 +723,25 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                             switch (p_.charAt(0)) {
                                 case 'A':
                                     temp.head=A.head;
+                                    temp_.head=A_.head;
                                     break;
                                 case 'B':
-                                    temp.head=A.head;
+                                    temp.head=B.head;
+                                    temp_.head=B_.head;
                                     break;
                                 case 'C':
                                     temp.head=C.head;
+                                    temp_.head=C_.head;
                                     break;
                             }
-                            if(temp.isEmpty())
+                            if(temp.isEmpty()&&temp_.isEmpty())
                                 throw new RuntimeException("Variable not set");
                         }
                         catch (RuntimeException ex)
                         {
                             System.out.println(ex.getMessage());
                         }
-                    } while (temp.isEmpty());
+                    } while (temp.isEmpty()&&temp_.isEmpty());
                     int [][] result = A.add(p.charAt(0), p_.charAt(0));
                     System.out.print("Result set in R: ("+result[0][0]+","+result[0][1] +")");
                     for(int i=1; i<result.length; i++) {
@@ -605,6 +752,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 break;
                 case 4: {
                     Polynomial temp = new Polynomial();
+                    Polynomial temp_ = new Polynomial();
                     do {
                         try {
                             do {
@@ -620,28 +768,85 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                             switch (p.charAt(0)) {
                                 case 'A':
                                     temp.head=A.head;
+                                    temp_.head=A_.head;
                                     break;
                                 case 'B':
                                     temp.head=B.head;
+                                    temp_.head=B_.head;
                                     break;
                                 case 'C':
                                     temp.head=C.head;
+                                    temp_.head=C_.head;
                                     break;
                             }
-                            if(temp.isEmpty())
+                            if(temp.isEmpty()&&temp_.isEmpty())
                                 throw new RuntimeException("Variable not set");
                         }
                         catch (RuntimeException ex)
                         {
                             System.out.println(ex.getMessage());
                         }
-                    } while (temp.isEmpty());
+                    } while (temp.isEmpty()&&temp_.isEmpty());
                     String p_ = new String();
                     do {
                         try {
                             do {
                                 try {
                                     System.out.println("Insert second operand variable name: A, B or C");
+                                    p_ = scan.next().toUpperCase();
+                                    if (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1)
+                                        throw new RuntimeException("Invalid Variable");
+                                } catch (RuntimeException ex) {
+                                    System.out.println(ex.getMessage());
+                                }
+                            } while (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1);
+                            switch (p_.charAt(0)) {
+                                case 'A':
+                                    temp.head=A.head;
+                                    temp_.head=A_.head;
+                                    break;
+                                case 'B':
+                                    temp.head=B.head;
+                                    temp_.head=B_.head;
+                                    break;
+                                case 'C':
+                                    temp.head=C.head;
+                                    temp_.head=C_.head;
+                                    break;
+                            }
+                            if(temp.isEmpty()&&temp_.isEmpty())
+                                throw new RuntimeException("Variable not set");
+                        }
+                        catch (RuntimeException ex)
+                        {
+                            System.out.println(ex.getMessage());
+                        }
+                    } while (temp.isEmpty()&&temp_.isEmpty());
+                    int [][] result = A.subtract(p.charAt(0), p_.charAt(0));
+                    if(result.length>0) {
+                        System.out.print("Result set in R: ("+result[0][0]+","+result[0][1] +")");
+                        for(int i=1; i<result.length; i++) {
+                            System.out.print(", ("+result[i][0]+","+result[i][1]+")");
+                        }
+                        System.out.println("");
+                    }
+                    else
+                        System.out.println("Result set in R: (0,0)");
+                }
+                break;
+                case 5:{
+
+                }
+                break;
+                case 6:
+                {
+                    Polynomial temp = new Polynomial();
+                    String p_ = new String();
+                    do {
+                        try {
+                            do {
+                                try {
+                                    System.out.println("Insert variable name: A, B or C");
                                     p_ = scan.next().toUpperCase();
                                     if (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1)
                                         throw new RuntimeException("Invalid Variable");
@@ -668,21 +873,26 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                             System.out.println(ex.getMessage());
                         }
                     } while (temp.isEmpty());
-                    int [][] result = A.subtract(p.charAt(0), p_.charAt(0));
-                    System.out.print("Result set in R: ("+result[0][0]+","+result[0][1] +")");
-                    for(int i=1; i<result.length; i++) {
-                        System.out.print(", ("+result[i][0]+","+result[i][1]+")");
-                    }
-                    System.out.println("");
-                }
-                break;
-                case 5:{
 
-                }
-                break;
-                case 6:
-                {
-
+                    System.out.println("Enter the value:");
+                    float value=0;
+                    boolean check=true;
+                    do {
+                        try {
+                            check=true;
+                            if(!scan.hasNextFloat())
+                            {
+                                check=false;
+                                throw new RuntimeException("invalid input");
+                            }
+                            else{
+                            value = scan.nextFloat();
+                            }
+                        } catch (RuntimeException ex) {
+                            System.out.println(ex.getMessage());
+                        }
+                    }while (!check);
+                    System.out.println(A.evaluatePolynomial(p_.charAt(0),value));
                 }
                 break;
                 case 7:
