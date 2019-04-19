@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33afa98b-3f19-45a0-9013-64066152603b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" afterDir="false" />
     </list>
@@ -45,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="931" column="66" selection-start-line="931" selection-start-column="66" selection-end-line="931" selection-end-column="66" />
+            <state relative-caret-position="150">
+              <caret line="560" column="41" selection-start-line="560" selection-start-column="41" selection-end-line="560" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setPolynomial#0;class#Polynomial#0" />
@@ -107,6 +106,9 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="org.infernus.idea.checkstyle.CheckStyleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -401,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555697370258</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="only multiply left">
+      <created>1555704402371</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1555704402371</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -470,7 +479,6 @@
     </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="SLNode" />
     <MESSAGE value="size in sll" />
     <MESSAGE value="isempty sll" />
     <MESSAGE value="Merge branches 'master' and 'thebetterbranch' of https://github.com/Sh3ra/Data-Structers1-Assignments&#10;&#10;# Conflicts:&#10;#&#9;assignment4/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/ILinkedList.class&#10;#&#9;assignment4/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/Main.class" />
@@ -495,7 +503,8 @@
     <MESSAGE value="restart" />
     <MESSAGE value="evaluate with -ve" />
     <MESSAGE value="ready.set.gooooo" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready.set.gooooo" />
+    <MESSAGE value="only multiply left" />
+    <option name="LAST_COMMIT_MESSAGE" value="only multiply left" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Singlelinkedlist.java" />
@@ -559,8 +568,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="931" column="66" selection-start-line="931" selection-start-column="66" selection-end-line="931" selection-end-column="66" />
+        <state relative-caret-position="150">
+          <caret line="560" column="41" selection-start-line="560" selection-start-column="41" selection-end-line="560" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setPolynomial#0;class#Polynomial#0" />

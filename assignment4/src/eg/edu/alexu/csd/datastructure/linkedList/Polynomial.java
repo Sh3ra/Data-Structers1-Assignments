@@ -558,6 +558,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     System.out.println("5- Multiply two polynomials");
                     System.out.println("6- Evaluate a polynomial at some point ");
                     System.out.println("7- Clear a polynomial variable");
+                    System.out.println("8- Exit");
                     System.out.println("====================================================================");
                     String tempooo=scan.nextLine();
                     if (!(tempooo.equals("1")||tempooo.equals("2")||tempooo.equals("3")||tempooo.equals("4")||tempooo.equals("5")||tempooo.equals("6")||tempooo.equals("7")))
@@ -931,6 +932,8 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     A.clearPolynomial(p_.charAt(0));
                     System.out.println(p_.charAt(0)+"is Cleared");
                 }
+                break;
+                case 8:System.exit(0);
             }
         }
     }
