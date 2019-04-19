@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
-    private static Polynomial A = new Polynomial();
+    private static Polynomial A  = new Polynomial();
     private static Polynomial A_ = new Polynomial();
     private static Polynomial B = new Polynomial();
     private static Polynomial B_ = new Polynomial();
@@ -163,7 +163,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
     }
 
     public float evaluatePolynomial(char poly, float value) {
-        float result=0;
+        double result=0;
         switch (poly)
         {
             case 'A':
@@ -172,7 +172,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 int index=0;
                 while (temp!=null)
                 {
-                    result = result + (((float) temp.val) * (float) Math.pow(value, index));
+                    result=result+(int)(temp.val)* java.lang.Math.pow(value,index);
                     temp=temp.next;
                     index++;
                 }
@@ -180,7 +180,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                  index=0;
                 while (temp!=null)
                 {
-                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index*-1);
+                    result=result+(int)(temp.val)* java.lang.Math.pow(value,index*-1);
                     temp=temp.next;
                     index++;
                 }
@@ -192,7 +192,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 int index=0;
                 while (temp!=null)
                 {
-                    result=result+((float)temp.val)*(float)java.lang.Math.pow(value,index);
+                    result=result+(int)(temp.val)* java.lang.Math.pow(value,index);
                     temp=temp.next;
                     index++;
                 }
@@ -200,7 +200,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 index=0;
                 while (temp!=null)
                 {
-                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index*-1);
+                    result=result+(int)(temp.val)* java.lang.Math.pow(value,index*-1);
                     temp=temp.next;
                     index++;
                 }
@@ -212,7 +212,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 int index=0;
                 while (temp!=null)
                 {
-                    result=result+((float)temp.val)*(float)java.lang.Math.pow(value,index);
+                    result=result+(int)(temp.val)* java.lang.Math.pow(value,index);
                     temp=temp.next;
                     index++;
                 }
@@ -220,7 +220,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 index=0;
                 while (temp!=null)
                 {
-                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index*-1);
+                    result=result+(int)(temp.val)* java.lang.Math.pow(value,index*-1);
                     temp=temp.next;
                     index++;
                 }
@@ -232,7 +232,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 int index=0;
                 while (temp!=null)
                 {
-                    result=result+((float)temp.val)*(float)java.lang.Math.pow(value,index);
+                    result=result+(int)(temp.val)* java.lang.Math.pow(value,index);
                     temp=temp.next;
                     index++;
                 }
@@ -240,14 +240,14 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 index=0;
                 while (temp!=null)
                 {
-                    result=result+((float)temp.val)*(float) java.lang.Math.pow(value,index*-1);
+                    result=result+(int)(temp.val)* java.lang.Math.pow(value,index*-1);
                     temp=temp.next;
                     index++;
                 }
             }
             break;
         }
-        return result;
+        return (float)result;
     }
 
     public int[][] add(char poly1, char poly2) {
@@ -779,14 +779,12 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                                     temp_.head=C_.head;
                                     break;
                             }
-                            if(temp.isEmpty()&&temp_.isEmpty())
+                            if (temp.isEmpty() && temp_.isEmpty())
                                 throw new RuntimeException("Variable not set");
                         }
-                        catch (RuntimeException ex)
-                        {
-                            System.out.println(ex.getMessage());
-                        }
-                    } while (temp.isEmpty()&&temp_.isEmpty());
+                        catch (RuntimeException ex){
+                             System.out.println(ex.getMessage());}
+                    } while (temp.isEmpty() && temp_.isEmpty());
                     String p_ = new String();
                     do {
                         try {
@@ -896,6 +894,43 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 }
                 break;
                 case 7:
+                {
+                    Polynomial temp = new Polynomial();
+                    String p_ = new String();
+                    do {
+                        try {
+                            do {
+                                try {
+                                    System.out.println("Insert variable name: A, B or C");
+                                    p_ = scan.next().toUpperCase();
+                                    if (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1)
+                                        throw new RuntimeException("Invalid Variable");
+                                } catch (RuntimeException ex) {
+                                    System.out.println(ex.getMessage());
+                                }
+                            } while (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1);
+                            switch (p_.charAt(0)) {
+                                case 'A':
+                                    temp.head=A.head;
+                                    break;
+                                case 'B':
+                                    temp.head=B.head;
+                                    break;
+                                case 'C':
+                                    temp.head=C.head;
+                                    break;
+                            }
+                            if(temp.isEmpty())
+                                throw new RuntimeException("Variable not set");
+                        }
+                        catch (RuntimeException ex)
+                        {
+                            System.out.println(ex.getMessage());
+                        }
+                    } while (temp.isEmpty());
+                    A.clearPolynomial(p_.charAt(0));
+                    System.out.println(p_.charAt(0)+"is Cleared");
+                }
             }
         }
     }
