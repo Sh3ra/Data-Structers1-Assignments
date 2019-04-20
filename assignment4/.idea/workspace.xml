@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33afa98b-3f19-45a0-9013-64066152603b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/assignment4_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" afterDir="false" />
     </list>
@@ -44,15 +46,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="563" column="190" selection-start-line="563" selection-start-column="190" selection-end-line="563" selection-end-column="190" />
+            <state relative-caret-position="136">
+              <caret line="99" column="44" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#setPolynomial#0;class#Polynomial#0" />
-                <element signature="method#add#0;class#Polynomial#0" />
-                <element signature="method#subtract#0;class#Polynomial#0" />
-                <element signature="method#multiply#0;class#Polynomial#0" />
-                <element signature="method#checkValidation#0;class#Polynomial#0" />
+                <element signature="e#17597#17604#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,15 +98,122 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="eg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="eg" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="eg" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+              <item name="alexu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="eg" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+              <item name="alexu" type="462c0819:PsiDirectoryNode" />
+              <item name="csd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="eg" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+              <item name="alexu" type="462c0819:PsiDirectoryNode" />
+              <item name="csd" type="462c0819:PsiDirectoryNode" />
+              <item name="datastructure" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="eg" type="462c0819:PsiDirectoryNode" />
+              <item name="edu" type="462c0819:PsiDirectoryNode" />
+              <item name="alexu" type="462c0819:PsiDirectoryNode" />
+              <item name="csd" type="462c0819:PsiDirectoryNode" />
+              <item name="datastructure" type="462c0819:PsiDirectoryNode" />
+              <item name="linkedList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="linkedList" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="org.infernus.idea.checkstyle.CheckStyleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -417,30 +522,37 @@
       <option name="project" value="LOCAL" />
       <updated>1555704967026</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="only multiply left">
+      <created>1555744054607</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1555744054607</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.6357928" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28290468" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Learn" order="5" />
+      <window_info id="Learn" order="5" weight="0.32980332" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="CheckStyle" sideWeight="0.49848714" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.4977307" side_tool="true" visible="true" weight="0.42553192" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.50226927" visible="true" weight="0.42553192" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.505295" side_tool="true" visible="true" weight="0.34042552" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.50226927" weight="0.42553192" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6278366" weight="0.39770868" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.48940998" weight="0.3715221" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49546143" weight="0.34042552" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.494705" visible="true" weight="0.34042552" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -575,15 +687,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="563" column="190" selection-start-line="563" selection-start-column="190" selection-end-line="563" selection-end-column="190" />
+        <state relative-caret-position="136">
+          <caret line="99" column="44" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#setPolynomial#0;class#Polynomial#0" />
-            <element signature="method#add#0;class#Polynomial#0" />
-            <element signature="method#subtract#0;class#Polynomial#0" />
-            <element signature="method#multiply#0;class#Polynomial#0" />
-            <element signature="method#checkValidation#0;class#Polynomial#0" />
+            <element signature="e#17597#17604#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -594,10 +702,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>assignment4:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

@@ -1,11 +1,12 @@
-package eg.edu.alexu.csd.datastructure.linkedList;
+  package eg.edu.alexu.csd.datastructure.linkedList;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+        import java.util.ArrayList;
+        import java.util.Scanner;
+        import java.awt.Point;
 
 public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
 
-    private static Polynomial A  = new Polynomial();
+    private static Polynomial A = new Polynomial();
     private static Polynomial A_ = new Polynomial();
     private static Polynomial B = new Polynomial();
     private static Polynomial B_ = new Polynomial();
@@ -56,7 +57,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
             }
             break;
             case 'C':
-             {
+            {
                 A.clearPolynomial('C');
                 for (int i = 0; i < terms.length; i++) {
                     if (terms[i][1] >= 0) {
@@ -69,6 +70,24 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                             C_.add(0);
                         }
                         C_.set(java.lang.Math.abs(terms[i][1]), terms[i][0]);
+                    }
+                }
+            }
+            break;
+            case 'R':
+            {
+                A.clearPolynomial('R');
+                for (int i = 0; i < terms.length; i++) {
+                    if (terms[i][1] >= 0) {
+                        while (R.size() <= terms[i][1]) {
+                            R.add(0);
+                        }
+                        R.set(terms[i][1], terms[i][0]);
+                    } else {
+                        while (R_.size() <= java.lang.Math.abs(terms[i][1])) {
+                            R_.add(0);
+                        }
+                        R_.set(java.lang.Math.abs(terms[i][1]), terms[i][0]);
                     }
                 }
             }
@@ -100,16 +119,28 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 break;
         }
 
-        String polynomial = new String();
+        String polynomial = "";
 
         for(int index = 0; index < temp.size(); index++) {
             if(temp.get(index) != (Object)0) {
                 if (index == 0)
                     polynomial = temp.get(index) + polynomial;
-                else if (index == 1)
-                    polynomial = (temp.get(index)==(Object)1?"":temp.get(index)) + "x" + polynomial;
-                else
-                    polynomial = (temp.get(index)==(Object)1?"":temp.get(index)) + "x^" + index + polynomial;
+                else if (index == 1) {
+                    if(temp.get(index)==(Object)1)
+                        polynomial = "x" + polynomial;
+                    else if(temp.get(index)==(Object)(-1))
+                        polynomial = "-x" + polynomial;
+                    else
+                        polynomial = temp.get(index) + "x" + polynomial;
+                }
+                else {
+                    if(temp.get(index)==(Object)1)
+                        polynomial = "x^" + index  + polynomial;
+                    else if(temp.get(index)==(Object)(-1))
+                        polynomial = "-x^" + index  + polynomial;
+                    else
+                        polynomial = temp.get(index) + "x^" + index  + polynomial;
+                }
                 polynomial = " + " + polynomial;
             }
         }
@@ -124,8 +155,14 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
             if(temp_.get(index) != (Object)0) {
                 if (index == 0)
                     polynomial += temp_.get(index);
-                else
-                    polynomial += (temp_.get(index)==(Object)(-1)?"-":temp_.get(index)) + "x^" + -1*index;
+                else {
+                    if(temp_.get(index)==(Object)1)
+                        polynomial += "x^" + -1*index;
+                    else if(temp_.get(index)==(Object)(-1))
+                        polynomial += "-x^" + -1*index;
+                    else
+                        polynomial += temp_.get(index) + "x^" + -1*index;
+                }
                 polynomial += " + ";
             }
         }
@@ -162,6 +199,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         }
     }
 
+
     public float evaluatePolynomial(char poly, float value) {
         double result=0;
         switch (poly)
@@ -177,7 +215,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     index++;
                 }
                 temp=A_.head;
-                 index=0;
+                index=0;
                 while (temp!=null)
                 {
                     result=result+(int)(temp.val)* java.lang.Math.pow(value,index*-1);
@@ -249,6 +287,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         }
         return (float)result;
     }
+
 
     public int[][] add(char poly1, char poly2) {
 
@@ -368,6 +407,8 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         }
         return result;
     }
+
+
     public int[][] subtract(char poly1, char poly2) {
 
         R.clear();
@@ -486,9 +527,144 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         }
         return result;
     }
+
+
     public int[][] multiply(char poly1, char poly2) {
 
-        return null;
+        R.clear();
+        R_.clear();
+
+        Polynomial temp1 = new Polynomial();
+        Polynomial temp2 = new Polynomial();
+
+        switch (poly1) {
+            case 'A':
+                temp1.head = A.head;
+                break;
+            case 'B':
+                temp1.head = B.head;
+                break;
+            case 'C':
+                temp1.head = C.head;
+                break;
+        }
+
+        switch (poly2) {
+            case 'A':
+                temp2.head = A.head;
+                break;
+            case 'B':
+                temp2.head = B.head;
+                break;
+            case 'C':
+                temp2.head = C.head;
+                break;
+        }
+
+        Polynomial temp1_ = new Polynomial();
+        Polynomial temp2_ = new Polynomial();
+
+        switch (poly1) {
+            case 'A':
+                temp1_.head = A_.head;
+                break;
+            case 'B':
+                temp1_.head = B_.head;
+                break;
+            case 'C':
+                temp1_.head = C_.head;
+                break;
+        }
+
+        switch (poly2) {
+            case 'A':
+                temp2_.head = A_.head;
+                break;
+            case 'B':
+                temp2_.head = B_.head;
+                break;
+            case 'C':
+                temp2_.head = C_.head;
+                break;
+        }
+
+        ArrayList <Point> productsDynamic = new ArrayList <Point>();
+        Point tempPoint = new Point();
+
+        for(int index1 = 0; index1 < temp1.size(); index1++) {
+            for(int index2 = 0; index2 < temp2.size(); index2++) {
+                tempPoint.x = (int)temp1.get(index1) * (int)temp2.get(index2);
+                tempPoint.y = index1 + index2;
+                boolean fnd = false;
+                for(int i=0; i<productsDynamic.size(); i++) {
+                    if(productsDynamic.get(i).y == tempPoint.y) {
+                        productsDynamic.get(i).x += tempPoint.x;
+                        fnd = true;
+                        break;
+                    }
+                }
+                if(!fnd && tempPoint.x != 0)
+                    productsDynamic.add(new Point(tempPoint));
+            }
+        }
+        for(int index1 = 0; index1 < temp1.size(); index1++) {
+            for(int index2 = 0; index2 < temp2_.size(); index2++) {
+                tempPoint.x = (int)temp1.get(index1) * (int)temp2_.get(index2);
+                tempPoint.y = index1 - index2;
+                boolean fnd = false;
+                for(int i=0; i<productsDynamic.size(); i++) {
+                    if(productsDynamic.get(i).y == tempPoint.y) {
+                        productsDynamic.get(i).x += tempPoint.x;
+                        fnd = true;
+                        break;
+                    }
+                }
+                if(!fnd && tempPoint.x != 0)
+                    productsDynamic.add(new Point(tempPoint));
+            }
+        }
+        for(int index1 = 0; index1 < temp1_.size(); index1++) {
+            for(int index2 = 0; index2 < temp2.size(); index2++) {
+                tempPoint.x = (int)temp1_.get(index1) * (int)temp2.get(index2);
+                tempPoint.y = -1*index1 + index2;
+                boolean fnd = false;
+                for(int i=0; i<productsDynamic.size(); i++) {
+                    if(productsDynamic.get(i).y == tempPoint.y) {
+                        productsDynamic.get(i).x += tempPoint.x;
+                        fnd = true;
+                        break;
+                    }
+                }
+                if(!fnd && tempPoint.x != 0)
+                    productsDynamic.add(new Point(tempPoint));
+            }
+        }
+        for(int index1 = 0; index1 < temp1_.size(); index1++) {
+            for(int index2 = 0; index2 < temp2_.size(); index2++) {
+                tempPoint.x = (int)temp1_.get(index1) * (int)temp2_.get(index2);
+                tempPoint.y = -1*index1 - index2;
+                boolean fnd = false;
+                for(int i=0; i<productsDynamic.size(); i++) {
+                    if(productsDynamic.get(i).y == tempPoint.y) {
+                        productsDynamic.get(i).x += tempPoint.x;
+                        fnd = true;
+                        break;
+                    }
+                }
+                if(!fnd && tempPoint.x != 0)
+                    productsDynamic.add(new Point(tempPoint));
+            }
+        }
+
+        int [][] products = new int[productsDynamic.size()][2];
+        for(int i=0; i<productsDynamic.size(); i++) {
+            products[i][0] = productsDynamic.get(i).x;
+            products[i][1] = productsDynamic.get(i).y;
+        }
+
+        R.setPolynomial('R', products);
+
+        return products;
     }
 
     private static boolean checkValidation(String x)
@@ -498,55 +674,55 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         int i=0;
         while (i<x.length()) {
             if(x.charAt(i)!=' '){
-            int counterComma = 0;
-            for (; i < x.length(); i++) {
-                if (x.charAt(i) != ' ') {
-                    if (x.charAt(i) == ',' && counterComma == 1)
-                        break;
-                    if (x.charAt(i) == ',' && counterComma == 0) counterComma++;
+                int counterComma = 0;
+                for (; i < x.length(); i++) {
+                    if (x.charAt(i) != ' ') {
+                        if (x.charAt(i) == ',' && counterComma == 1)
+                            break;
+                        if (x.charAt(i) == ',' && counterComma == 0) counterComma++;
+                    }
+                }
+                if (i != x.length()) {
+                    int index = i - 1, commas = 0;
+                    if (x.charAt(index) == ')') index--;
+                    while (x.charAt(index) != '(') {
+                        if (x.charAt(index) != ' ') {
+                            if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ',' && !(x.charAt(index) == '-' && (x.charAt(index + 1) >= '0' && x.charAt(index + 1) <= '9')))
+                                return false;
+                            if (x.charAt(index) == ',') commas++;
+                            if (commas > 1) return false;
+                            index--;
+                        }
+                        else index--;
+                    }
+                } else {
+                    i--;
+                    int index = i, commas = 0;
+                    if (x.charAt(index) == ')') index--;
+                    if (x.charAt(i) != ')') return false;
+                    while (x.charAt(index) != '(') {
+                        if (x.charAt(index) != ' ') {
+                            if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ',' && !(x.charAt(index) == '-' && (x.charAt(index + 1) >= '0' && x.charAt(index + 1) <= '9')))
+                                return false;
+                            if (x.charAt(index) == ',') commas++;
+                            if (commas > 1) return false;
+                            index--;
+                            i++;
+                        }
+                        else index--;
+                    }
                 }
             }
-            if (i != x.length()) {
-                int index = i - 1, commas = 0;
-                if (x.charAt(index) == ')') index--;
-                while (x.charAt(index) != '(') {
-                    if (x.charAt(index) != ' ') {
-                        if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ',' && !(x.charAt(index) == '-' && (x.charAt(index + 1) >= '0' && x.charAt(index + 1) <= '9')))
-                            return false;
-                        if (x.charAt(index) == ',') commas++;
-                        if (commas > 1) return false;
-                        index--;
-                    }
-                   else index--;
-                }
-            } else {
-                i--;
-                int index = i, commas = 0;
-                if (x.charAt(index) == ')') index--;
-                if (x.charAt(i) != ')') return false;
-                while (x.charAt(index) != '(') {
-                    if (x.charAt(index) != ' ') {
-                        if ((x.charAt(index) < '0' || x.charAt(index) > '9') && x.charAt(index) != ',' && !(x.charAt(index) == '-' && (x.charAt(index + 1) >= '0' && x.charAt(index + 1) <= '9')))
-                            return false;
-                        if (x.charAt(index) == ',') commas++;
-                        if (commas > 1) return false;
-                        index--;
-                        i++;
-                    }
-                   else index--;
-                }
-            }
-        }
             i++;
         }
         return true;
     }
 
-    public static void main(String[] args) {
 
-        while (true) {
-            int s = 0;
+    public static void main(String[] args) {
+        while ( true ) {
             Scanner scan = new Scanner(System.in);
+            int s = 0;
             do {
                 try {
                     System.out.println("Please choose an action");
@@ -562,13 +738,13 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     System.out.println("====================================================================");
                     String tempooo=scan.nextLine();
                     if (!(tempooo.equals("1")||tempooo.equals("2")||tempooo.equals("3")||tempooo.equals("4")||tempooo.equals("5")||tempooo.equals("6")||tempooo.equals("7")||tempooo.equals("8")))
-                        throw new RuntimeException("invalid input");
+                        throw new RuntimeException("Invalid input");
                     else s=Integer.parseInt(tempooo);
                 } catch (RuntimeException ex) {
                     System.out.println(ex.getMessage());
                 }
-            } while (s < 1 || s > 7);
-            String p = new String();
+            } while (s < 1 || s > 8);
+            String p = "";
             switch (s) {
                 case 1: {
                     do {
@@ -582,7 +758,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                             System.out.println(ex.getMessage());
                         }
                     } while (!p.equals("A") && !p.equals("B") && !p.equals("C"));
-                    String x = new String();
+                    String x = "";
                     int temp_index=0;
                     boolean checker=false;
                     ArrayList<String>y=new ArrayList<>();
@@ -607,9 +783,9 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     int openCounter=0;
                     for(int i=0;i<x.length();i++)
                         if(x.charAt(i)=='(')openCounter++;
-                    int  terms[][]=new int [openCounter][2];
+                    int[][] terms = new int[openCounter][2];
                     int index=0;
-                    String temp = new String();
+                    String temp = "";
                     for(int i=0;i<x.length();i++)
                     {
                         if(x.charAt(i)!='('&&x.charAt(i)!=')'&&x.charAt(i)!=',')
@@ -658,6 +834,10 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                                 case 'C':
                                     temp.head=C.head;
                                     temp_.head=C_.head;
+                                    break;
+                                case 'R':
+                                    temp.head=R.head;
+                                    temp_.head=R_.head;
                                     break;
                             }
                             if(temp.isEmpty()&&temp_.isEmpty())
@@ -708,7 +888,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                             System.out.println(ex.getMessage());
                         }
                     } while (temp.isEmpty()&&temp_.isEmpty());
-                    String p_ = new String();
+                    String p_ = "";
                     do {
                         try {
                             do {
@@ -748,7 +928,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     for(int i=1; i<result.length; i++) {
                         System.out.print(", ("+result[i][0]+","+result[i][1]+")");
                     }
-                    System.out.println("");
+                    System.out.println();
                 }
                 break;
                 case 4: {
@@ -780,13 +960,15 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                                     temp_.head=C_.head;
                                     break;
                             }
-                            if (temp.isEmpty() && temp_.isEmpty())
+                            if(temp.isEmpty()&&temp_.isEmpty())
                                 throw new RuntimeException("Variable not set");
                         }
-                        catch (RuntimeException ex){
-                             System.out.println(ex.getMessage());}
-                    } while (temp.isEmpty() && temp_.isEmpty());
-                    String p_ = new String();
+                        catch (RuntimeException ex)
+                        {
+                            System.out.println(ex.getMessage());
+                        }
+                    } while (temp.isEmpty()&&temp_.isEmpty());
+                    String p_ = "";
                     do {
                         try {
                             do {
@@ -827,20 +1009,96 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                         for(int i=1; i<result.length; i++) {
                             System.out.print(", ("+result[i][0]+","+result[i][1]+")");
                         }
-                        System.out.println("");
+                        System.out.println();
                     }
                     else
                         System.out.println("Result set in R: (0,0)");
                 }
                 break;
                 case 5:{
-
+                    Polynomial temp = new Polynomial();
+                    Polynomial temp_ = new Polynomial();
+                    do {
+                        try {
+                            do {
+                                try {
+                                    System.out.println("Insert first operand variable name: A, B or C");
+                                    p = scan.next().toUpperCase();
+                                    if (!p.equals("A") && !p.equals("B") && !p.equals("C") || p.length() != 1)
+                                        throw new RuntimeException("Invalid Variable");
+                                } catch (RuntimeException ex) {
+                                    System.out.println(ex.getMessage());
+                                }
+                            } while (!p.equals("A") && !p.equals("B") && !p.equals("C") || p.length() != 1);
+                            switch (p.charAt(0)) {
+                                case 'A':
+                                    temp.head=A.head;
+                                    temp_.head=A_.head;
+                                    break;
+                                case 'B':
+                                    temp.head=B.head;
+                                    temp_.head=B_.head;
+                                    break;
+                                case 'C':
+                                    temp.head=C.head;
+                                    temp_.head=C_.head;
+                                    break;
+                            }
+                            if(temp.isEmpty()&&temp_.isEmpty())
+                                throw new RuntimeException("Variable not set");
+                        }
+                        catch (RuntimeException ex)
+                        {
+                            System.out.println(ex.getMessage());
+                        }
+                    } while (temp.isEmpty()&&temp_.isEmpty());
+                    String p_ = "";
+                    do {
+                        try {
+                            do {
+                                try {
+                                    System.out.println("Insert second operand variable name: A, B or C");
+                                    p_ = scan.next().toUpperCase();
+                                    if (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1)
+                                        throw new RuntimeException("Invalid Variable");
+                                } catch (RuntimeException ex) {
+                                    System.out.println(ex.getMessage());
+                                }
+                            } while (!p_.equals("A") && !p_.equals("B") && !p_.equals("C") || p_.length() != 1);
+                            switch (p_.charAt(0)) {
+                                case 'A':
+                                    temp.head=A.head;
+                                    temp_.head=A_.head;
+                                    break;
+                                case 'B':
+                                    temp.head=B.head;
+                                    temp_.head=B_.head;
+                                    break;
+                                case 'C':
+                                    temp.head=C.head;
+                                    temp_.head=C_.head;
+                                    break;
+                            }
+                            if(temp.isEmpty()&&temp_.isEmpty())
+                                throw new RuntimeException("Variable not set");
+                        }
+                        catch (RuntimeException ex)
+                        {
+                            System.out.println(ex.getMessage());
+                        }
+                    } while (temp.isEmpty()&&temp_.isEmpty());
+                    int [][] result = A.multiply(p.charAt(0), p_.charAt(0));
+                    System.out.print("Result set in R: ("+result[0][0]+","+result[0][1] +")");
+                    for(int i=1; i<result.length; i++) {
+                        System.out.print(", ("+result[i][0]+","+result[i][1]+")");
+                    }
+                    System.out.println();
                 }
                 break;
                 case 6:
                 {
                     Polynomial temp = new Polynomial();
-                    String p_ = new String();
+                    String p_ = "";
                     do {
                         try {
                             do {
@@ -885,7 +1143,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                                 throw new RuntimeException("invalid input");
                             }
                             else{
-                            value = scan.nextFloat();
+                                value = scan.nextFloat();
                             }
                         } catch (RuntimeException ex) {
                             System.out.println(ex.getMessage());
@@ -897,7 +1155,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                 case 7:
                 {
                     Polynomial temp = new Polynomial();
-                    String p_ = new String();
+                    String p_ = "";
                     do {
                         try {
                             do {
@@ -930,7 +1188,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                         }
                     } while (temp.isEmpty());
                     A.clearPolynomial(p_.charAt(0));
-                    System.out.println(p_.charAt(0)+"is Cleared");
+                    System.out.println(p_.charAt(0)+" is Cleared");
                 }
                 break;
                 case 8:System.exit(0);
@@ -938,4 +1196,3 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
         }
     }
 }
-
