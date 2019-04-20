@@ -561,7 +561,7 @@ public class Polynomial extends SinglyLinkedList implements IPolynomialSolver {
                     System.out.println("8- Exit");
                     System.out.println("====================================================================");
                     String tempooo=scan.nextLine();
-                    if (!(tempooo.equals("1")||tempooo.equals("2")||tempooo.equals("3")||tempooo.equals("4")||tempooo.equals("5")||tempooo.equals("6")||tempooo.equals("7")))
+                    if (!(tempooo.equals("1")||tempooo.equals("2")||tempooo.equals("3")||tempooo.equals("4")||tempooo.equals("5")||tempooo.equals("6")||tempooo.equals("7")||tempooo.equals("8")))
                         throw new RuntimeException("invalid input");
                     else s=Integer.parseInt(tempooo);
                 } catch (RuntimeException ex) {
