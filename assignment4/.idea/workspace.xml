@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="assignment4:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="33afa98b-3f19-45a0-9013-64066152603b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/assignment4_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,10 +49,9 @@
         <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="99" column="44" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
+              <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#17597#17604#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,8 +100,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -529,14 +530,20 @@
       <option name="project" value="LOCAL" />
       <updated>1555744054607</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="done">
+      <created>1555799963531</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1555799963531</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28290468" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28744328" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -544,18 +551,18 @@
       <window_info id="Learn" order="5" weight="0.32980332" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="CheckStyle" sideWeight="0.49848714" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.505295" side_tool="true" visible="true" weight="0.34042552" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5060514" side_tool="true" visible="true" weight="0.34042552" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.50226927" weight="0.42553192" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6278366" weight="0.39770868" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.48940998" weight="0.3715221" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.494705" visible="true" weight="0.34042552" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49394855" visible="true" weight="0.34042552" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="CheckStyle" order="11" sideWeight="0.49848714" weight="0.3289689" />
       <window_info anchor="right" x="-120" y="228" width="1182" height="544" id="Byte Code Viewer" order="0" type="FLOATING" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="2" />
@@ -598,7 +605,6 @@
     </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="size in sll" />
     <MESSAGE value="isempty sll" />
     <MESSAGE value="Merge branches 'master' and 'thebetterbranch' of https://github.com/Sh3ra/Data-Structers1-Assignments&#10;&#10;# Conflicts:&#10;#&#9;assignment4/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/ILinkedList.class&#10;#&#9;assignment4/out/production/assignment4/eg/edu/alexu/csd/datastructure/linkedList/Main.class" />
     <MESSAGE value="2arf" />
@@ -623,7 +629,8 @@
     <MESSAGE value="evaluate with -ve" />
     <MESSAGE value="ready.set.gooooo" />
     <MESSAGE value="only multiply left" />
-    <option name="LAST_COMMIT_MESSAGE" value="only multiply left" />
+    <MESSAGE value="done" />
+    <option name="LAST_COMMIT_MESSAGE" value="done" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Singlelinkedlist.java" />
@@ -688,10 +695,9 @@
     <entry file="file://$PROJECT_DIR$/src/eg/edu/alexu/csd/datastructure/linkedList/Polynomial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="99" column="44" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
+          <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17597#17604#0" expanded="true" />
           </folding>
         </state>
       </provider>
