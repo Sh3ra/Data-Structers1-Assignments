@@ -11,8 +11,8 @@ public interface IStack {
      Object peek();
     /**
      * Pushes an item onto the top of this stack.
-     *  @param object
-     * to insert */
+     *  @param element
+     *  to insert */
      void push(Object element);
     /**
      *  Tests if this stack is empty
