@@ -3,6 +3,9 @@ package eg.edu.alexu.csd.datastructure.linkedList;
 public class ExpressionEvaluater implements IExpressionEvaluater {
     @Override
     public String infixToPostfix(String expression) {
+
+
+
         String out = "";
         Stack stacky=new Stack();
         for(int i=0;i<expression.length();i++)
@@ -26,8 +29,12 @@ public class ExpressionEvaluater implements IExpressionEvaluater {
                     index2=i+1;
                     while (index2<expression.length()&&expression.charAt(index2)==' ')
                         index2++;
-                    out=out+expression.charAt(index2);
-                    i=index2;
+                    while (index2<expression.length()&&((expression.charAt(index2)>47&&expression.charAt(index2)<58)||(expression.charAt(index2)>96&&expression.charAt(index2)<123))) {
+                        out = out + expression.charAt(index2);
+                        index2++;
+                    }
+                    i=index2-1;
+
                     out=out+" -";
                 }
                 else {
@@ -100,14 +107,20 @@ public class ExpressionEvaluater implements IExpressionEvaluater {
                     if(!out.isEmpty()){
                     if(out.charAt(out.length()-1)!=' ')
                     {
-                        out=out+expression.charAt(i);
-                    }}
+                            out = out + expression.charAt(i);
+                    }
+                    }
                 }
                 else {
                     if(!out.isEmpty())
                     if(out.charAt(out.length()-1)!=' ')
                         out=out+' ';
-                    out = out + expression.charAt(i);
+                    int index=i;
+                    while (index<expression.length()&&((expression.charAt(index)>47&&expression.charAt(index)<58)||(expression.charAt(index)>96&&expression.charAt(index)<123))) {
+                        out = out + expression.charAt(index);
+                        index++;
+                    }
+                    i=index-1;
 
                 }
             }
@@ -202,10 +215,82 @@ public class ExpressionEvaluater implements IExpressionEvaluater {
         String out;
         float result;
         Stack stacky=new Stack();
+        int negative_terms=0,numb=0,op=0;
         for(int i=0;i<expression.length();i++)
         {
-
+            if((expression.charAt(i)>47&&expression.charAt(i)<58))
+            {
+                numb++;
+                if(i>0)
+                {
+                    if(expression.charAt(i-1)>47&&expression.charAt(i-1)<58)
+                        numb--;
+                }
+            }
+            else if(expression.charAt(i)=='+'||expression.charAt(i)=='-'||expression.charAt(i)=='*'||expression.charAt(i)=='/')
+            {
+                op++;
+            }
         }
-        return 0;
+        negative_terms=numb-op-1;
+        negative_terms*=-1;
+        for(int i=0;i<expression.length();i++)
+        {
+            if(expression.charAt(i)=='-')
+            {
+                if(negative_terms==0)
+                {
+                    float v1,v2;
+                    String temp=""+stacky.pop();
+                    v1=Float.parseFloat(temp);
+                    temp=""+stacky.pop();
+                    v2=Float.parseFloat(temp);
+                    result= v2-v1;
+                    stacky.push(result);
+                }
+                else {
+                    float v1;
+                    String temp=""+stacky.pop();
+                    v1=Float.parseFloat(temp)*-1;
+                    stacky.push(v1);
+                    negative_terms--;
+                }
+            }
+         else if((expression.charAt(i)>47&&expression.charAt(i)<58)||(expression.charAt(i)>96&&expression.charAt(i)<123))
+            {
+                String temp="";
+                int index=i;
+                while (expression.charAt(index)>47&&expression.charAt(index)<58&&index<expression.length()){
+                    temp=temp+expression.charAt(index);
+                    index++;}
+                i=index-1;
+                stacky.push(temp);
+            }
+            else if(expression.charAt(i)=='+'||expression.charAt(i)=='*'||expression.charAt(i)=='/')
+            {
+                float v1,v2;
+                String temp=""+stacky.pop();
+                v1=Float.parseFloat(temp);
+                temp=""+stacky.pop();
+                v2=Float.parseFloat(temp);
+                switch (expression.charAt(i))
+                {
+                    case '+':{
+                        result=v1+v2;
+                        stacky.push(result);
+                    }break;
+                    case '*':{
+                        result=v1*v2;
+                        stacky.push(result);
+                    }break;
+                    case '/':{
+                        result= v2/v1;
+                        stacky.push(result);
+                    }
+                }
+            }
+        }
+        result=(float)stacky.pop();
+        return (int)result;
     }
 }
