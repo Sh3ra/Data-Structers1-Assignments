@@ -1,11 +1,62 @@
 package eg.edu.alexu.csd.datastructure.linkedList;
 
+import com.sun.imageio.spi.RAFImageInputStreamSpi;
+
+import static java.lang.Math.abs;
+
 public class ExpressionEvaluater implements IExpressionEvaluater {
     @Override
     public String infixToPostfix(String expression) {
+        try{
+            if(expression.length()<3)
+            {
+                throw new RuntimeException ("Invalid expression");
+            }
+            int par_count=0;
+            for(int i=0;i<expression.length();i++)
+            {
+                if(expression.charAt(i)=='(')par_count++;
+                else if(expression.charAt(i)==')'&&par_count==0)
+                {
+                    throw new RuntimeException("Invalid expression");
+                }
+                else if(expression.charAt(i)==')'&&par_count>0)par_count--;
+            }
+            int numb=0,op=0;
+            for(int i=0;i<expression.length();i++)
+            {
+                if((expression.charAt(i)>47&&expression.charAt(i)<58))
+                {
+                    numb++;
+                    if(i>0)
+                    {
+                        if(expression.charAt(i-1)>47&&expression.charAt(i-1)<58)
+                            numb--;
+                    }
+                }
+                else if(expression.charAt(i)=='+'||expression.charAt(i)=='-'||expression.charAt(i)=='*'||expression.charAt(i)=='/')
+                {
+                    op++;
+                }
+            }
+            int negative_term=numb-op-1;
 
-
-
+            if(abs(negative_term)!=0)
+            {
+                int neg=0;
+                for(int i=0;i<expression.length();i++)
+                {
+                    if(expression.charAt(i)=='-')neg++;
+                }
+                if(neg<abs(negative_term))
+                {
+                    throw new RuntimeException("Invalid Expression");
+                }
+            }
+        }catch (RuntimeException ex){
+            System.out.println(ex.getMessage());
+            System.exit(0);
+        }
         String out = "";
         Stack stacky=new Stack();
         for(int i=0;i<expression.length();i++)
@@ -212,7 +263,43 @@ public class ExpressionEvaluater implements IExpressionEvaluater {
 
     @Override
     public int evaluate(String expression) {
-        String out;
+        try{
+        int numb=0,op=0;
+        for(int i=0;i<expression.length();i++)
+        {
+            if((expression.charAt(i)>47&&expression.charAt(i)<58))
+            {
+                numb++;
+                if(i>0)
+                {
+                    if(expression.charAt(i-1)>47&&expression.charAt(i-1)<58)
+                        numb--;
+                }
+            }
+            else if(expression.charAt(i)=='+'||expression.charAt(i)=='-'||expression.charAt(i)=='*'||expression.charAt(i)=='/')
+            {
+                op++;
+            }
+        }
+        int negative_term=numb-op-1;
+        negative_term*=-1;
+        if(negative_term!=0)
+        {
+            int neg=0;
+            for(int i=0;i<expression.length();i++)
+            {
+                if(expression.charAt(i)=='-')neg++;
+            }
+            if(neg<negative_term)
+            {
+                throw new RuntimeException("Invalid Expression");
+            }
+        }
+    }catch (RuntimeException ex){
+        System.out.println(ex.getMessage());
+        System.exit(0);
+    }
+
         float result;
         Stack stacky=new Stack();
         int negative_terms=0,numb=0,op=0;
