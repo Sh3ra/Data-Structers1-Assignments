@@ -56,7 +56,7 @@ public class QueueArrayBased implements IArrayBased,IQueue {
 
     @Override
     public boolean isEmpty() {
-        return size()==0&&arr[front]==null;
+        return size()==0;
     }
 
     @Override
