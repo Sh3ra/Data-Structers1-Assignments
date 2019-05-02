@@ -61,5 +61,10 @@ public class QueueArrayBased implements IArrayBased,IQueue {
 
     @Override
     public int size() {
-        return (MAX - front + rear) % MAX;    }
+        if ((MAX - front + rear) % MAX==0)
+        {
+          if (arr[front]==null)return 0;
+          else return MAX;
+         }
+  }
 }
