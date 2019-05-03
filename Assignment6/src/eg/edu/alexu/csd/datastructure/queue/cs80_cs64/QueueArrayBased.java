@@ -66,5 +66,6 @@ public class QueueArrayBased implements IArrayBased,IQueue {
           if (arr[front]==null)return 0;
           else return MAX;
          }
+        return (MAX - front + rear) % MAX;
   }
 }

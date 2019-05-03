@@ -12,6 +12,7 @@ public class QueueArrayBasedTest {
         test.enqueue(1);
         test.enqueue(2);
         test.enqueue(3);
+        test.enqueue(3);
         assertEquals(0,test.dequeue());
     }
 
